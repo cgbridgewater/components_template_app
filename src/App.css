@@ -1,0 +1,163 @@
+/*                       */
+/* IMPORT YOUR FONT HERE */
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap');
+
+
+/*                  */
+/* CSS PAGE IMPORTS */
+/*                  */
+@import url("./Components/NavBar_Component/NavBar.css");
+
+/*                       */
+/*     MAIN APP CSS      */
+/*                       */
+
+
+/* DEFINE ROOT COLORS HERE */
+:root {
+  /* Standardize font sizes */
+  --font_size_default: 16px;
+  --image_brightness: 100%; /* Image Brightness for light color theme */
+  --background: #EFEFEF;
+  --white_text: #CBE5EC;
+  --white: #FFF;
+  --black:#0F2F47;
+  --off_white: #F5F5F5;
+  --light_yellow: #F6E8B7;
+  --dark_yellow: #EFD780;
+  --green: #18AC58;
+  --shadow: #979393;
+  --navbar: #0F2F47;
+  --navbar_trim: #CBE5EC50;
+}
+
+/* DEFINE DARK MODE COLORS HERE */
+[data-theme = "dark"] {
+  --image_brightness: 65%; /* Image Brightness for dark color theme */
+  --background: #010814;
+  --white: #CBE5EC50;
+  --black: #CBE5EC;
+  --off_white: #CBE5EC50;
+  --light_yellow: #161625;
+  --dark_yellow: #182445;
+  --green: #6DA182;
+  --shadow: #1B1527;
+  --navbar: #182445;
+}
+
+#root {
+  overflow-x: hidden;
+}
+/* END ROOT STYLES */
+
+
+/* RESET CSS */
+html, body, * {
+  margin: 0px;
+  padding: 0px;
+  border: 0px;
+  font-family: 'Source Sans Pro', sans-serif;/* Declare imported main font here */
+  word-spacing: .097rem;
+  font-display: swap;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: var(--font_size_default);
+}
+/* END CSS RESET */
+
+
+/* SET BACKGROUND COLOR */
+body {
+  width: 100%;
+  background-color: var(--background)
+}
+
+
+/* STANDARDIZE FONT SIZES */
+h1, h2, h3, h4, h5, h6, a, p {
+  transition: all 300ms ease;
+}
+
+h1 {
+  font-size: 2.25rem;
+  color: var(--black);
+  text-shadow: 0.5px 0.5px 0.5px var(--shadow);
+}
+
+h2 {
+  font-size: 1.75rem;
+  color: var(--black);
+  text-shadow: 0.5px 0.5px 0.5px var(--shadow);
+}
+
+h3 {
+  font-size: 1.375rem;
+  color: var(--black);
+}
+
+h4 {
+  font-size: 1.125rem;
+  color: var(--black);
+}
+
+h5 {
+  font-size: 1rem;
+  color: var(--black);
+}
+
+p {
+  font-size: 1.1rem;
+  color: var(--black);
+}
+
+a {
+  font-size: 1.125rem;
+  text-decoration: none;
+}
+/* END STANDARDIZE FONT SIZES */
+
+
+/* INCREASE FONT SIZES FOR LARGER SCREEN VIEWS */
+@media (min-width: 1200px) {
+  h1 {
+    font-size: 2.8rem;
+  }
+  h2 {
+    font-size: 2rem;
+  }
+  h3 {
+    font-size: 1.58rem;
+  }
+  h4 {
+    font-size: 1.295rem;
+  }
+  p {
+    font-size: 1.265rem;
+  }
+
+}
+/* END OF INCREASE FONT SIZES FOR LARGER SCREEN VIEWS */
+
+
+/* MAIN WRAPPER -- TO BE USED ON ALL VIEW PAGES */
+main {
+  min-height: calc(100dvh - 250px); /* subtract the height of the navbar AND footer (this prevents screen collapse) */
+}
+/* END MAIN WRAPPER */
+
+
+/* CONDITIONAL RENDERING BASED ON SCREEN SIZE */
+@media only screen and (min-width:580px) {
+  .mobile_only {
+      display:none !important;
+  }
+}
+
+@media only screen and (max-width:579px) {
+  .desktop_only {
+      display:none !important;
+  }
+}
+/* END OF CONDITIONAL RENDERING BASED ON SCREEN SIZE */
