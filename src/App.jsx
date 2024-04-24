@@ -4,6 +4,7 @@ import './App.css'
 import CenteredPage from './Views/CenteredPage'
 import SplitPage from './Views/SplitPage'
 import NavBar from './Components/NavBar_Component/NavBar'
+import ErrorPage from './Views/ErrorPageView/ErrorPage'
 
 function App() {
 
@@ -19,7 +20,7 @@ function App() {
         <Route exact path="/split" element={<SplitPage />} />
 
 
-
+        <Route path="/:bad/*" element={<ErrorPage/>} />
       </Routes>
       {/* chatbox here */}
       {/* go to top button here */}

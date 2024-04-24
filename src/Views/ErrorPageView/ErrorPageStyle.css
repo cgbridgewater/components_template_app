@@ -1,0 +1,50 @@
+/*                   */
+/*  404 PAGE STYLES  */
+/*                   */
+
+.error_404_page {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+
+    h2 {
+        margin-top: 24px;
+        text-align: center;
+        color: var(--black);
+    }
+    img {
+        margin: 0 auto;
+        width: 100%;
+        max-width: 750px;
+        min-width: 290px;
+        filter: drop-shadow(5px 5px 5px  var(--shadow)) brightness(var(--image_brightness));
+
+    }
+    a {
+        width: 200px;
+        height: 50px;
+        margin: 0 0 12px 0;
+        color: var(--black_fulltime);
+        background-color: #E8EFFA;
+        border: 1px solid var(--black);
+        border-radius: 8px;
+        filter: drop-shadow(5px 5px 5px  var(--shadow)) brightness(var(--image_brightness));;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 300ms ease;
+    
+        &:hover {
+            background-color: var(--green);
+            border-color: #E8EFFA;
+        }
+    }
+}
+
+@media (max-width: 500px) {
+    .error_404_page h2 {
+        margin-top: 80px;
+    }
+}

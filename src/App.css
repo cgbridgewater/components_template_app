@@ -7,7 +7,7 @@
 /* CSS PAGE IMPORTS */
 /*                  */
 @import url("./Components/NavBar_Component/NavBar.css");
-
+@import url("./Views/ErrorPageView/ErrorPageStyle.css");
 /*                       */
 /*     MAIN APP CSS      */
 /*                       */
@@ -22,18 +22,21 @@
   --white_text: #CBE5EC;
   --white: #FFF;
   --black:#0F2F47;
+  --black_fulltime: #0F2F47;
   --off_white: #F5F5F5;
   --light_yellow: #F6E8B7;
   --dark_yellow: #EFD780;
   --green: #18AC58;
+  --red: #c60505;
   --shadow: #979393;
   --navbar: #0F2F47;
+  --navbar_shadow: #979393;
   --navbar_trim: #CBE5EC50;
 }
 
 /* DEFINE DARK MODE COLORS HERE */
 [data-theme = "dark"] {
-  --image_brightness: 65%; /* Image Brightness for dark color theme */
+  --image_brightness: 75%; /* Image Brightness for dark color theme */
   --background: #010814;
   --white: #CBE5EC50;
   --black: #CBE5EC;
@@ -41,7 +44,9 @@
   --light_yellow: #161625;
   --dark_yellow: #182445;
   --green: #6DA182;
-  --shadow: #1B1527;
+  --red: #960000;
+  --shadow: #645489;
+  --navbar_shadow: #352a4d;
   --navbar: #182445;
 }
 
@@ -144,6 +149,11 @@ a {
 /* MAIN WRAPPER -- TO BE USED ON ALL VIEW PAGES */
 main {
   min-height: calc(100dvh - 250px); /* subtract the height of the navbar AND footer (this prevents screen collapse) */
+  padding-top: 150px; /* compensates for the nav bar height */
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
 /* END MAIN WRAPPER */
 
