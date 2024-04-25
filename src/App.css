@@ -7,6 +7,9 @@
 /* CSS PAGE IMPORTS */
 /*                  */
 @import url("./Components/NavBar_Component/NavBar.css");
+@import url("./Components/Go_To_Top_Component/GoToTop_Style.css");
+@import url("./Components/Footer_Component/Footer_Style.css");
+@import url("./Components/Button_Component/button.css");
 @import url("./Views/ErrorPageView/ErrorPageStyle.css");
 /*                       */
 /*     MAIN APP CSS      */
@@ -29,7 +32,9 @@
   --green: #18AC58;
   --red: #c60505;
   --shadow: #979393;
-  --navbar: #0F2F47;
+  --img_trim: #0F2F47;
+  --button_bg: #979393;
+  --navbar: #010814;
   --navbar_shadow: #979393;
   --navbar_trim: #CBE5EC50;
 }
@@ -46,6 +51,8 @@
   --green: #6DA182;
   --red: #960000;
   --shadow: #645489;
+  --img_trim: #182445;
+  --button_bg: #2b4f59e6;
   --navbar_shadow: #352a4d;
   --navbar: #182445;
 }
@@ -64,8 +71,10 @@ html, body, * {
   font-family: 'Source Sans Pro', sans-serif;/* Declare imported main font here */
   word-spacing: .097rem;
   font-display: swap;
-  box-sizing: border-box;
-}
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box;}
 
 html {
   font-size: var(--font_size_default);
@@ -146,16 +155,12 @@ a {
 /* END OF INCREASE FONT SIZES FOR LARGER SCREEN VIEWS */
 
 
-/* MAIN WRAPPER -- TO BE USED ON ALL VIEW PAGES */
+/* MAIN  -- TO BE USED ON ALL VIEW PAGES */
 main {
   min-height: calc(100dvh - 250px); /* subtract the height of the navbar AND footer (this prevents screen collapse) */
   padding-top: 150px; /* compensates for the nav bar height */
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
 }
-/* END MAIN WRAPPER */
+/* END MAIN  */
 
 
 /* CONDITIONAL RENDERING BASED ON SCREEN SIZE */
@@ -171,3 +176,169 @@ main {
   }
 }
 /* END OF CONDITIONAL RENDERING BASED ON SCREEN SIZE */
+
+
+
+
+/*                              */
+/*        PAGE LAYOUTS          */
+/*                              */
+
+/* GENERAL PAGE WRAPPER */
+.wrapper {
+  width: 80%;
+  margin: 0 auto;
+  -webkit-overflow-scrolling: touch;
+  transition: all 300ms ease;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ONE LARGE CENTERED CONTAINER */
+.centered_box {
+  min-width: 290px;
+  max-width: 750px;
+  margin: 12px 5px;
+  padding: 5px 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  img {
+    width: 70%;
+    margin: 36px auto;
+    min-width: 285px;
+    aspect-ratio: 2/1;
+    border: thin solid var(--img_trim);
+    box-shadow:  8px 8px 10px var(--shadow);
+    border-radius: 20px;
+    filter: brightness(var(--image_brightness))
+  }
+}
+
+/* TWO BOX CONTAINER - SPLIT LEFT/RIGHT */
+.split_box {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/* THIS FLIPS THE WRAP (CAN BE USED TO PREVENT BACK TO BACK IMAGES OR TEXT ON PAGE COLLAPSE/PHONE VIEW) */
+.flip {
+  flex-wrap: wrap-reverse;
+}
+
+/* SPLIT TEXT CONTAINER */
+.split_box_text {
+  width: 45%;
+  min-width: 300px;
+  max-width: 800px;
+  margin: 5px 5px 20px 5px;
+  padding: 5px 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content:center;
+  align-items: center;
+}
+
+/* SPLIT IMAGE CONTAINER */
+.split_box_img {
+  width: 45%;
+  min-width: 290px;
+  max-width: 800px;
+  margin: 20px 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content:center;
+  align-items: center;
+
+  img {
+    width: 90%;
+    min-width: 285px;
+    aspect-ratio: 2/1;
+    border: thin solid var(--img_trim);
+    box-shadow:  8px 8px 10px var(--shadow);
+    border-radius: 20px;
+    filter: brightness(var(--image_brightness))
+  }
+}
+
+/* LIST CONTROL */
+.split_box_text ul, .centered_box ul {
+  width: 75%;
+  min-width: 240px;
+  margin: 0 auto;
+  
+  li {
+    list-style-type: disc;
+    color: var(--black);
+  }
+}
+
+/* TEXT ALIGNMENT */
+.wrapper, .split_box_text, .centered_box {
+  h1, h2 {
+    text-align: center;
+    margin: 16px 0;
+  }
+  h3 {
+    text-align: center;
+    margin: 12px 0;
+  }
+  h4 {
+    text-align: center;
+    margin: 8px 0;
+  }
+  p {
+    margin: 8px;
+    text-align:start;
+  }
+}
+
+/* ADD A BACKGROUND TO ANY BOX */
+.add_background {
+  width: 43%;
+  min-width: 290px;
+  padding: 40px 15px;
+  justify-content: flex-start;
+  background-color: var(--off_white);
+  border: thin solid var(--img_trim);
+  border-radius: 10px;
+  box-shadow: 8px 8px 10px var(--shadow);
+}
+
+@media (max-width: 1065px) {
+  .split_box_text, .split_box_img {
+    margin: 20px auto;
+    width: 100%;
+  }
+}
+
+
+/*                      */
+/*   SCROLL BAR STYLE   */
+/*                      */
+/* width */
+::-webkit-scrollbar {
+  width: 14px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: var(--white_text); 
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--navbar_shadow);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: var(--img_trim);
+}

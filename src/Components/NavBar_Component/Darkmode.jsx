@@ -1,4 +1,5 @@
 const DarkMode = () => {
+
     const set_dark_mode = () => {
         document.querySelectorAll(".dark_mode_input").forEach(input => {
             input.checked = true;
@@ -24,7 +25,6 @@ const DarkMode = () => {
     };
 
     const selected_theme = localStorage.getItem("selected_theme");
-
     if (selected_theme === "dark") {
         set_dark_mode();
     } else {

@@ -1,0 +1,57 @@
+/*                             */
+/*     BUTTON COMPONENT        */
+/*                             */
+
+.button_box {
+    margin: 15px auto;
+    position:relative;
+    overflow:hidden;
+    border:thin solid var(--img_trim);
+    border-radius: 10px;
+    transition:all .2s ease-in-out;
+    box-shadow: 5px 5px 10px var(--shadow);
+}
+
+.button_box button {
+    width:100%;
+    height:80px;
+    padding: 16px;
+    position:relative;
+    background-color: var(--button_bg);
+    text-transform:uppercase;
+    color: var(--black);
+    font-weight:900;
+    letter-spacing:1px;
+    border: none;
+    font-size: 1.25rem;
+    outline:none;
+    cursor: pointer;
+}
+
+.button_box::before {
+    content:" ";
+    display:block;
+    width:200px;
+    height: 95px;
+    background: #CBE5EC50;
+    position:absolute;
+    top:-5px;
+    left:-200px;
+    transform:rotate(45deg);
+    transition:all .2s ease-in-out;  
+    z-index:1;
+}
+
+.button_box:hover:before {
+    margin-left:300%;
+}
+
+.button_box:hover {
+    border: 1px solid var(--white);
+    border-radius: 10px;
+    box-shadow: 8px 8px 10px var(--shadow);
+}
+
+.button_box:active {
+    top: 4px;
+}

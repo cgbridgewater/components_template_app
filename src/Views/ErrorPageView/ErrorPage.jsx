@@ -1,9 +1,13 @@
 import { Link } from "react-router-dom";
+import { useEffect } from "react";
 import GreatScott from "../../Assets/Images/GreatScott.png"
-
 
 const ErrorPage = () => {
     
+    useEffect(() => {
+        window.scrollTo(0,0)
+    },[])
+
     const changeText = () => {
         var link = document.getElementById('go_back');
         if(link.innerText === "Go Back!") {
@@ -12,7 +16,7 @@ const ErrorPage = () => {
             link.innerText = "Go Back!";
         }
     };
-    
+
     return(
         <main>
             <div className="error_404_page">

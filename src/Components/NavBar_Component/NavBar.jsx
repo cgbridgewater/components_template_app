@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import DarkMode from "./Darkmode";
 import NavLink from "./NavLink";
 
@@ -28,7 +28,7 @@ const NavBar = () => {
         <input type="checkbox" id="drawer_toggle" name="drawer_toggle"/>
         <label htmlFor="drawer_toggle" id="drawer_toggle_label"><span className="visually-hidden">Empty Link</span></label>
         <header>
-            <img src="https://static.vecteezy.com/system/resources/previews/008/695/917/original/no-image-available-icon-simple-two-colors-template-for-no-image-or-picture-coming-soon-and-placeholder-illustration-isolated-on-white-background-vector.jpg" alt="REPLACE WITH LOGO IMAGE" />
+            <img src="https://mattcarterauthor.weebly.com/uploads/1/9/5/2/19525625/819762509.jpeg?399" alt="REPLACE WITH LOGO IMAGE" />
             <Link to="/">Company Name</Link>
         </header>
         <nav id="drawer">
@@ -48,7 +48,7 @@ const NavBar = () => {
             </ul>
         </nav>
         </>
-    )
+    );
 };
 
 export default NavBar;

@@ -5,6 +5,7 @@ import CenteredPage from './Views/CenteredPage'
 import SplitPage from './Views/SplitPage'
 import NavBar from './Components/NavBar_Component/NavBar'
 import ErrorPage from './Views/ErrorPageView/ErrorPage'
+import GoToTopButton from './Components/Go_To_Top_Component/GoToTop'
 
 function App() {
 
@@ -24,6 +25,7 @@ function App() {
       </Routes>
       {/* chatbox here */}
       {/* go to top button here */}
+      <GoToTopButton />
       {/* footer here */}
       </BrowserRouter>
     </>

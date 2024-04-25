@@ -4,7 +4,7 @@ const NavLink = ({ href, text }) => {
 
     return (
         <Link to={ href }><span className="nav_link">{ text }</span></Link>
-    )
-}
+    );
+};
 
-export default NavLink
+export default NavLink;
