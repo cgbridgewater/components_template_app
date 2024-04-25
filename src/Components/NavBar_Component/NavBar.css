@@ -225,8 +225,21 @@ header {
 }
 /* END SCREEN RESPONSE */
 
+/* Required For Accessability */
+.visually-hidden {
+    position: absolute !important;
+    clip: rect(1px, 1px, 1px, 1px);
+    padding: 0 !important;
+    border: 0 !important;
+    height: 1px !important;
+    width: 1px !important;
+    overflow: hidden !important;
+    white-space: nowrap !important;
+}
 
+/*                    */
 /* Nav Bar Link Style */
+/*                    */
 /* Including Link Underline Fade In On Hover */
 .nav_link {
     position: relative;
@@ -260,7 +273,9 @@ header {
 .nav_link:hover:before, .nav_link:hover:after {
     width: 50%;
 }
+/*                        */
 /* END Nav Bar Link Style */
+/*                        */
 
 
 /*                            */
@@ -338,15 +353,3 @@ header {
 /*   END DARK MODE STYLE   */
 /*                         */
 
-
-/* Required For Accessability */
-.visually-hidden {
-    position: absolute !important;
-    clip: rect(1px, 1px, 1px, 1px);
-    padding: 0 !important;
-    border: 0 !important;
-    height: 1px !important;
-    width: 1px !important;
-    overflow: hidden !important;
-    white-space: nowrap !important;
-}

@@ -6,6 +6,7 @@ import SplitPage from './Views/SplitPage'
 import NavBar from './Components/NavBar_Component/NavBar'
 import ErrorPage from './Views/ErrorPageView/ErrorPage'
 import GoToTopButton from './Components/Go_To_Top_Component/GoToTop'
+import Footer from './Components/Footer_Component/Footer'
 
 function App() {
 
@@ -26,7 +27,7 @@ function App() {
       {/* chatbox here */}
       {/* go to top button here */}
       <GoToTopButton />
-      {/* footer here */}
+      <Footer />
       </BrowserRouter>
     </>
   )

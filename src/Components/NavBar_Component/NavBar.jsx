@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { useEffect } from 'react';
 import DarkMode from "./Darkmode";
 import NavLink from "./NavLink";
+import NavLink_atag from "./NavLink_atag";
 
 const NavBar = () => {
 
@@ -41,6 +42,9 @@ const NavBar = () => {
                 </li>
                 <li className="drawer_link">
                     <NavLink href="/centered" text="Centered Page Example" />
+                </li>
+                <li className="drawer_link">
+                    <NavLink_atag href="https://www.google.com" text="Google.com" />
                 </li>
                 <li className="drawer_link_dark">
                     <DarkMode />
