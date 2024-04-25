@@ -11,6 +11,7 @@ const Index = () => {
         <main>
             <div className="wrapper">
                 <div className="centered_box">
+                    <h1 style={{color:"red"}}>This Page Demonstrates Mixed Views</h1>
                     <h1>Hey, Doc? Doc. Hello, anybody home?</h1>
                     <p>
                         A bolt of lightning, unfortunately, you never know when or where it's ever gonna strike. That's a Florence Nightingale effect. It happens in hospitals when nurses fall in love with their patients. Go to it, kid. This is it. This is the answer. It says here that a bolt of lightning is gonna strike the clock tower precisely at 10:04 p.m. next Saturday night. If we could somehow harness this bolt of lightning, channel it into the flux capacitor, it just might work. Next Saturday night, we're sending you back to the future.

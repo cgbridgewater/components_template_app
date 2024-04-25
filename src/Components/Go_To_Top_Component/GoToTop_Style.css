@@ -4,7 +4,8 @@
 
 .go_top_button {
     position: fixed;
-    top: 88%;  
+    top: calc(100% - 92.5px);  
+    /* top: 88%;   */
     right: 25px;
     height: 50px;
     width: 50px;
@@ -36,12 +37,12 @@
         width: 35px;
         font-size: 20px;
         right: 16px;
-        top: 89%; 
+        top: calc(100% - 82.5px); 
     }
 }
 
 @media screen and (max-width: 499px) {
     .go_top_button {
-        top: 92%;
+        top: calc(100% - 87.5px); 
     }
 }

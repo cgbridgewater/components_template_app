@@ -10,6 +10,7 @@ const SplitPage = () => {
     return (
         <main>
             <div className="wrapper">
+                <h1 style={{color:"red"}}>This Page Demonstrates Split Views</h1>
                 <h1>Alright, McFly, you're asking for it, and now you're gonna get it.</h1>
                 <div className="split_box">
                     <div className="split_box_text">

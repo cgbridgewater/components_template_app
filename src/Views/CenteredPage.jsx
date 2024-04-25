@@ -11,6 +11,7 @@ const CenteredPage = () => {
         <main>
             <div className="wrapper">
                 <div className="centered_box">
+                    <h1 style={{color:"red"}}>This Page Demonstrates Centered Views</h1>
                     <h1>Silence Earthling</h1> 
                     <h3>My name is Darth Vader. I'm am an extra-terrestrial from the planet Vulcan.</h3>
                     <img src="https://static1.cbrimages.com/wordpress/wp-content/uploads/2022/05/Eddie-Van-Halen-Cameo-Back-to-the-Future.jpeg" alt="Space Suit" />
