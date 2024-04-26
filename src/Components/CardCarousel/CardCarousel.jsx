@@ -115,7 +115,7 @@ const CardCarousel = () => {
             <div className="carousel">
                 {/* Card 1 */}
                 <div className="carousel_card card_on_left" data-pos="1">
-                    <img src="https://parade.com/.image/ar_4:3%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cq_auto:good%2Cw_1200/MTkxNTY2ODc2ODk0MDQ1Njgy/different-types-of-sushi.jpg" alt="Sushi Types" className="illustration"/>
+                    <img src="https://www.thevegspace.co.uk/wp-content/uploads/2018/02/FV-Insta-8-500x500.jpg" alt="Sushi Types" className="illustration"/>
                     <p className="card_name">All Types Of Sushi</p>
                 </div>
                 {/* Card 2 */}
