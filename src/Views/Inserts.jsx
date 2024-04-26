@@ -22,7 +22,9 @@ const Inserts = () => {
                 {/* END SLIDESHOW INSERT */}
 
                 {/* CARD CAROUSEL INSERT */}
+                <br /><br />
                 <h1>This is the Card Carousel component</h1>
+                <h4>(Food break)</h4>
                 <CardCarousel />
                 {/* END CARD CAROUSEL INSERT */}
 

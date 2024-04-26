@@ -14,7 +14,7 @@ const CardCarousel = () => {
     useEffect(() => {
         animateCards();
     }, []);
-  
+
     function animateCards() {
         const cardElements = document.querySelectorAll('.carousel_card');
         setCards([...cardElements]);
@@ -42,7 +42,7 @@ const CardCarousel = () => {
 
     function changeCard(direction) {
         canChange = false;
-    
+
         cards.forEach(card => {
             let pos = parseInt(card.dataset.pos, 10);
             let formerPos = pos;
@@ -93,7 +93,6 @@ const CardCarousel = () => {
             if (deltaX > 10 || deltaY > 10) {
                 deltaX > deltaY ? ( direction = Math.sign(newX - prevX), prevX = newX ) 
                 : (direction = Math.sign(newY - prevY), prevY = newY);
-                
                 changeCard(direction);
             }
         }
@@ -116,45 +115,45 @@ const CardCarousel = () => {
             <div className="carousel">
                 {/* Card 1 */}
                 <div className="carousel_card card_on_left" data-pos="1">
-                    <img src="https://picsum.photos/400" alt="Lorem Picsum" className="illustration"/>
-                    <p className="card_name">Lorem Picsum</p>
+                    <img src="https://parade.com/.image/ar_4:3%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cq_auto:good%2Cw_1200/MTkxNTY2ODc2ODk0MDQ1Njgy/different-types-of-sushi.jpg" alt="Sushi Types" className="illustration"/>
+                    <p className="card_name">All Types Of Sushi</p>
                 </div>
                 {/* Card 2 */}
                 <div className="carousel_card card_on_right" data-pos="2">
-                    <img src="https://via.placeholder.com/400" alt="place holder" className="illustration"/>
-                    <p className="card_name">Place Holder</p>
+                    <img src="https://img.buzzfeed.com/thumbnailer-prod-us-east-1/video-api/assets/114292.jpg" alt="Philadelphia Roll" className="illustration"/>
+                    <p className="card_name">Philadelphia Roll</p>
                 </div>
                 {/* Card 3 */}
                 <div className="carousel_card card_on_left" data-pos="3">
-                    <img src="https://placebear.com/400/400" alt="place Cage" className="illustration"/>
-                    <p className="card_name">Place Bear</p>
+                    <img src="https://www.justonecookbook.com/wp-content/uploads/2020/06/Dragon-Roll-0286-I-500x500.jpg" alt="Dragon Roll" className="illustration"/>
+                    <p className="card_name">Dragon Roll</p>
                 </div>
                 {/* Card 4 */}
                 <div className="carousel_card card_on_right"data-pos="4">
-                    <img src="https://placebeard.it/400x400" alt="Place Beard" className="illustration"/>
-                    <p className="card_name">Place Beard</p>
+                    <img src="https://foreignfork.com/wp-content/uploads/2023/10/RainbowRoll-FEATURE-500x500.jpg" alt="Rainbow Roll" className="illustration"/>
+                    <p className="card_name">Rainbow Roll</p>
                 </div>
                 {/* Card 5 */}
                 <div className="carousel_card card_on_left" data-pos="5">
-                    <img src="https://baconmockup.com/400/400" alt="baconmockup" className="illustration"/>
-                    <p className="card_name">Bacon Mockup</p>
+                    <img src="https://134742494.cdn6.editmysite.com/uploads/1/3/4/7/134742494/s977809178166563819_p5_i3_w1920.jpeg" alt="Tiger Roll" className="illustration"/>
+                    <p className="card_name">Tiger Roll</p>
                 </div>
                 {/* Card 6 */}
                 <div className="carousel_card card_on_right" data-pos="6">
-                    <img src="https://placebeard.it/400x400" alt="place beard" className="illustration"/>
-                    <p className="card_name">Place Beard</p>
+                    <img src="https://mysushikitchen.com/wp-content/uploads/2021/02/Las-Vegas-Roll-500x500.jpg?crop=1" alt="Las Vegas Roll" className="illustration"/>
+                    <p className="card_name">Las Vegas Roll</p>
                 </div>
                 {/* Card 7 */}
                 <div className="carousel_card card_on_left" data-pos="7">
-                    <img src="https://loremflickr.com/400/400" alt="place img" className="illustration"/>
-                    <p className="card_name">Lorem Picsum</p>
+                    <img src="https://norecipes.com/wp-content/uploads/2022/02/shrimp-tempura-roll-004.jpg" alt="Shimp Tempura Roll" className="illustration"/>
+                    <p className="card_name">Shimp Tempura Roll</p>
                 </div>
                 {/* Card 8 */}
                 <div className="carousel_card card_on_right" data-pos="8">
-                    <img src="http://placekitten.com/g/400/400" alt="Place Kitten" className="illustration"/>
-                    <p className="card_name">Place Kitten</p>
+                    <img src="https://www.alyonascooking.com/wp-content/uploads/2020/04/spicy-tuna-roll-32-500x500.jpg" alt="Spicy Tuna Roll" className="illustration"/>
+                    <p className="card_name">Spicy Tuna Roll</p>
                 </div>
-                
+
                 {/* <div className="carousel_card card_on_left" data-pos="8">
                     <img src="http://placekitten.com/g/400/400" alt="Place Kitten" className="illustration"/>
                     <p className="card_name">Place Kitten</p>
@@ -164,6 +163,7 @@ const CardCarousel = () => {
                     <img src="https://picsum.photos/400/400" alt="Lorem Picsum" className="illustration"/>
                     <p className="card_name">Lorem Picsum</p>
                 </div> */}
+
             </div>
 
         </div>
