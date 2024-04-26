@@ -1,0 +1,229 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Oswald&display=swap');
+
+
+.container {
+  margin: 48px 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  h3 {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    color: var(--black);
+  }
+}
+
+.carousel {
+  position: relative;
+  min-width: 290px;
+  max-width: 500px;
+  width: 90%;
+  aspect-ratio: 1/1.3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.carousel_arrow {
+  width: 2.5rem;
+  aspect-ratio: 1/1.25;
+  font-size: 1.4rem;
+  font-weight: 900;
+  color: var(--black);
+  background: var(--button_bg);
+  border: 2px solid var(--img_trim);
+  border-radius: 50%;
+  box-shadow: 2px 2px 5px 1px var(--shadow);
+  place-content: center;
+  cursor: pointer;
+  transition: all 300ms ease;
+}
+
+.carousel_arrow:hover {
+  color: var(--button_bg);
+  background: var(--img_trim);
+  box-shadow: 2px 2px 8px 2px var(--shadow);
+}
+
+.carousel_card {
+  position: absolute;
+  width: 100%;
+  min-width: 290px;
+  max-width: 425px;
+  aspect-ratio: 1/1.175;
+  transform-origin: bottom;
+  transition: transform 1s ease-in-out;
+  border: 8px solid var(--img_trim);
+  background: #EEE;
+  box-shadow: 1px 1px 5px var(--shadow);
+
+  img {
+    width: 100%;
+    height: auto;
+    transition: transform .25s ease-in-out;
+    border-bottom: 4px solid var(--img_trim);
+  }
+  
+  p {
+    text-align: center !important;
+    vertical-align: middle !important;
+    font-size: 2.5rem;
+    font-family: caveat;
+    color: var(--black_fulltime);
+  }
+}
+
+
+.carousel_card[data-pos='1'] {
+  z-index: 1;
+}
+
+.carousel_card[data-pos='2'] {
+  z-index: 2;
+}
+
+.carousel_card[data-pos='3'] {
+  z-index: 3;
+}
+
+.carousel_card[data-pos='4'] {
+  z-index: 4;
+}
+
+.carousel_card[data-pos='5'] {
+  z-index: 5;
+}
+
+.carousel_card[data-pos='6'] {
+  z-index: 6;
+}
+
+.carousel_card[data-pos='7'] {
+  z-index: 7;
+}
+
+.carousel_card[data-pos='8'] {
+  z-index: 8;
+}
+
+.card_on_left {
+  transform: translateX(calc(-50% - 50vw));
+}
+
+.card_on_right {
+  transform: translateX(calc(50% + 50vw));
+}
+
+.card_centered[data-pos='1'] {
+  transform: rotate(5deg);
+}
+
+.card_centered[data-pos='2'] {
+  transform: rotate(10deg);
+}
+
+.card_centered[data-pos='3'] {
+  transform: rotate(5deg);
+}
+
+.card_centered[data-pos='4'] {
+  transform: rotate(0deg);
+}
+
+.card_centered[data-pos='5'] {
+  transform: rotate(-5deg);
+}
+
+.card_centered[data-pos='6'] {
+  transform: rotate(-10deg);
+}
+
+.card_centered[data-pos='7'] {
+  transform: rotate(-5deg);
+}
+
+.card_centered[data-pos='8'] {
+  transform: rotate(0deg);
+}
+
+/* animation for moving cards from front to back */
+.carousel_card[data-pos='9'] {
+  z-index: 9;
+  animation: linear .5s forwards running to-the-back;
+}
+
+@keyframes to-the-back {
+
+  25% {
+    opacity: 0.75;
+  }
+  40% {
+    transform: translateX(10vw)  rotate(30deg);
+    opacity: 0;
+    z-index: 9;
+  }
+  60% {
+    transform: translateX(-15vw)  rotate(-45deg);
+    opacity: 0;
+  }
+  75% {
+    opacity: 0.75;
+    z-index: 1;
+  }
+  100% {
+    transform: translateX(0)  rotate(0);
+    opacity: 1;
+    z-index: 1;
+  }
+}
+
+/* anim for moving cards from back to front */
+.carousel_card[data-pos='0'] {
+  z-index: 0;
+  animation: linear .5s forwards running to-the-front;
+}
+
+@keyframes to-the-front {
+  25% {
+    opacity: 0.75;
+  }
+  40% {
+    transform: translateX(-15vw)  rotate(-45deg);
+    opacity: 0;
+    z-index: 1;
+  }
+  60% {
+    transform: translateX(10vw)  rotate(30deg);
+    opacity: 0;
+  }
+  75% {
+    opacity: 0.75;
+    z-index: 9;
+  }
+  100% {
+    transform: translateX(0)  rotate(0);
+    opacity: 1;
+    z-index: 9;
+  }
+}
+
+
+/* Card Text Responsiveness */
+@media screen and (max-width: 1100px) {
+  .carousel_card p {
+    font-size: 2.25rem;
+  }
+}
+@media screen and (max-width: 950px) {
+  .carousel_card p {
+    font-size: 2.25rem;
+  }
+}
+@media screen and (max-width: 650px) {
+  .carousel_card p {
+    font-size: 1.9rem;
+  }
+}

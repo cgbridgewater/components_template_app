@@ -40,6 +40,7 @@ const CenteredPage = () => {
                     <p>
                         Are you sure about this storm? I don't wanna know your name. I don't wanna know anything anything about you. Hey not too early I sleep in Sunday's, hey McFly, you're shoe's untied, don't be so gullible, McFly. Y'know this time it wasn't my fault. The Doc set all of his clocks twenty-five minutes slow. Yeah I know, If you put your mind to it you could accomplish anything.
                     </p>
+                    <Button to="/inserts" text="Inserts Page" />
                     <img src="https://static1.cbrimages.com/wordpress/wp-content/uploads/2023/11/back-to-the-future-doc-and-marty-cropped.jpg?q=49&fit=crop&w=750&dpr=2" alt="Doc and Marty" />
                 </div>
                 <div className="centered_box">

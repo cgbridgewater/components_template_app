@@ -1,0 +1,55 @@
+/** SLIDESHOW **/
+.slideshow, .slideshow::after { 
+    position: relative;
+    margin: 24px 0;
+    width: 90%;
+    max-width: 665px;
+    min-width: 290px;
+    aspect-ratio: 2/1;
+    list-style-type: none;
+}
+
+.slideshow li span { 
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    background-size: cover;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    border: 2px solid var(--img_trim);
+    border-radius: 10px;
+    opacity: 0;
+    z-index: 0;
+    animation: imageAnimation 15s linear infinite 0s; 
+}
+
+/* images and times for slide show */
+.slideshow li:nth-child(1) span { 
+    background-image: url("https://ew.com/thmb/PegxGThMrH7YnbnFkkNrHYC7Rag=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/back-to-the-future_0-cd25692758ab4541a44f70cff6283c85.jpg"); 
+}
+.slideshow li:nth-child(2) span { 
+    background-image: url("https://cdn.vox-cdn.com/thumbor/QCwE-AzWZoRl7ycBvNRcUceqyus=/1400x788/filters:format(jpeg)/cdn.vox-cdn.com/uploads/chorus_asset/file/15799915/20151021-back-to-the-future.0.1535758770.jpg");
+    animation-delay: 3s; 
+}
+.slideshow li:nth-child(3) span { 
+    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9X1lkajuZ5arOdQpFxbT8KP9dj9_PTp8Cz7PomL4J9A&s");
+    animation-delay: 6s; 
+}
+.slideshow li:nth-child(4) span { 
+    background-image: url("https://assets.newatlas.com/dims4/default/1745b9d/2147483647/strip/true/crop/1318x879+43+0/resize/1200x800!/quality/90/?url=http%3A%2F%2Fnewatlas-brightspot.s3.amazonaws.com%2F2c%2F93%2F7275f9274586bf18372e1279b4f0%2Fback-to-the-future-hoverboard-ftr.jpeg");   
+    animation-delay: 9s; 
+}
+.slideshow li:nth-child(5) span { 
+    background-image: url("https://static.tvtropes.org/pmwiki/pub/images/rsz_jaws192.png");
+    animation-delay: 12s; 
+}
+
+/* Animation for slide show */
+@keyframes imageAnimation { 
+    0% { opacity: 0; animation-timing-function: ease-in; }
+    8% { opacity: 1; animation-timing-function: ease-out; }
+    17% { opacity: 1 }
+    25% { opacity: 0 }
+    100% { opacity: 0 }
+}

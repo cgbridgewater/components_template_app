@@ -44,6 +44,9 @@ const NavBar = () => {
                     <NavLink href="/centered" text="Centered Page Example" />
                 </li>
                 <li className="drawer_link">
+                    <NavLink href="/inserts" text="Insert Examples" />
+                </li>
+                <li className="drawer_link">
                     <NavLink_atag href="https://www.google.com" text="Google.com" />
                 </li>
                 <li className="drawer_link_dark">

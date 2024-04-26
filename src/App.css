@@ -9,6 +9,8 @@
 @import url("./Components/NavBar_Component/NavBar.css");
 @import url("./Components/Go_To_Top_Component/GoToTop_Style.css");
 @import url("./Components/Footer_Component/Footer_Style.css");
+@import url("./Components/Slideshow_Component/Slideshow_Style.css");
+@import url("./Components/CardCarousel/CardCarousel_Style.css");
 @import url("./Components/Button_Component/button.css");
 @import url("./Views/ErrorPageView/ErrorPageStyle.css");
 /*                       */
@@ -56,10 +58,6 @@
   --navbar_shadow: #352a4d;
   --navbar: #182445;
 }
-
-#root {
-  overflow-x: hidden;
-}
 /* END ROOT STYLES */
 
 
@@ -82,11 +80,22 @@ html {
 /* END CSS RESET */
 
 
-/* SET BACKGROUND COLOR */
-body {
+/* SET BACKGROUND COLOR AND PAGE SIZING */
+#root {
   width: 100%;
-  background-color: var(--background)
+  display: flex;
+  flex-direction: column;
+  min-height: 100dvh;
+  background-color: var(--background);
+  overflow-x: hidden;
 }
+
+/* MAIN  -- TO BE USED ON ALL VIEW PAGES */
+main {
+  flex: 1;
+  padding-top: 150px; /* compensates for the nav bar height */
+}
+/* END MAIN  */
 
 
 /* STANDARDIZE FONT SIZES */
@@ -153,14 +162,6 @@ a {
 
 }
 /* END OF INCREASE FONT SIZES FOR LARGER SCREEN VIEWS */
-
-
-/* MAIN  -- TO BE USED ON ALL VIEW PAGES */
-main {
-  min-height: calc(100dvh - 250px); /* subtract the height of the navbar AND footer (this prevents screen collapse) */
-  padding-top: 150px; /* compensates for the nav bar height */
-}
-/* END MAIN  */
 
 
 /* CONDITIONAL RENDERING BASED ON SCREEN SIZE */
