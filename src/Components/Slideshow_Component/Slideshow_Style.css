@@ -7,6 +7,10 @@
     min-width: 290px;
     aspect-ratio: 2/1;
     list-style-type: none;
+    border: 2px solid var(--img_trim);
+    border-radius: 10px;
+    box-shadow:  8px 8px 10px var(--shadow);
+
 }
 
 .slideshow li span { 
@@ -17,8 +21,6 @@
     background-size: cover;
     background-position: 50% 50%;
     background-repeat: no-repeat;
-    border: 2px solid var(--img_trim);
-    border-radius: 10px;
     opacity: 0;
     z-index: 0;
     animation: imageAnimation 15s linear infinite 0s; 

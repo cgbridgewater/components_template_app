@@ -58,7 +58,7 @@
   transition: transform 1s ease-in-out;
   border: 8px solid var(--img_trim);
   background: #EEE;
-  box-shadow: 1px 1px 5px var(--shadow);
+  box-shadow:  2px 2px 10px var(--shadow);
 
   img {
     width: 100%;
