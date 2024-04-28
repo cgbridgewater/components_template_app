@@ -8,25 +8,29 @@ import ErrorPage from './Views/ErrorPageView/ErrorPage'
 import GoToTopButton from './Components/Go_To_Top_Component/GoToTop'
 import Footer from './Components/Footer_Component/Footer'
 import './App.css'
+import NavBar2 from './Components/NavBar_2_Component/NabBar_2'
 
 function App() {
 
 
   return (
     <>
+      {/* App Type 1 */}
       <BrowserRouter>
-      <NavBar />
-      <Routes>
-        <Route exact path="/" element={<Index />} />
-        <Route path="/centered" element={<CenteredPage />} />
-        <Route path="/split" element={<SplitPage />} />
+        {/* PICK A NAV BAR - ADD/REMOVE CSS IMPORT FROM APP.JSX */}
+        {/* <NavBar /> */}
+        <NavBar2 />
+        <Routes>
+          <Route exact path="/" element={<Index />} />
+          <Route path="/centered" element={<CenteredPage />} />
+          <Route path="/split" element={<SplitPage />} />
 
-        <Route path="/inserts" element={<Inserts />} />
-        <Route path="/:bad/*" element={<ErrorPage/>} />
-      </Routes>
-      {/* chatbox here */}
-      <GoToTopButton />
-      <Footer />
+          <Route path="/inserts" element={<Inserts />} />
+          <Route path="/:bad/*" element={<ErrorPage/>} />
+        </Routes>
+        {/* chatbox here */}
+        <GoToTopButton />
+        <Footer />
       </BrowserRouter>
     </>
   )

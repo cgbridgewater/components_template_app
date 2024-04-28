@@ -6,7 +6,8 @@
 /*                  */
 /* CSS PAGE IMPORTS */
 /*                  */
-@import url("./Components/NavBar_Component/NavBar.css");
+/* @import url("./Components/NavBar_Component/NavBar.css"); */
+@import url("./Components/NavBar_2_Component/NavBar_2_Style.css");
 @import url("./Components/Go_To_Top_Component/GoToTop_Style.css");
 @import url("./Components/Footer_Component/Footer_Style.css");
 @import url("./Components/Slideshow_Component/Slideshow_Style.css");
