@@ -1,8 +1,13 @@
+import { useEffect } from "react";
 import Button from "../Components/Button_Component/Button";
 import CardCarousel from "../Components/CardCarousel/CardCarousel";
 import Slideshow from "../Components/Slideshow_Component/Slideshow";
 
 const Inserts = () => {
+
+    useEffect(() => {
+        window.scrollTo(0,0)
+    },[])
 
     return (
         <main>
