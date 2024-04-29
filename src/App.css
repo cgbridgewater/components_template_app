@@ -49,8 +49,8 @@
   --white: #CBE5EC50;
   --black: #CBE5EC;
   --off_white: #CBE5EC50;
-  --light_yellow: #161625;
-  --dark_yellow: #182445;
+  /* --light_yellow: #161625; */
+  /* --dark_yellow: #182445; */
   --green: #6DA182;
   --red: #960000;
   --shadow: #645489;
@@ -89,12 +89,13 @@ html {
   min-height: 100dvh;
   background-color: var(--background);
   overflow-x: hidden;
+  transition: all 800ms ease;
 }
 
 /* MAIN  -- TO BE USED ON ALL VIEW PAGES */
+/* navbar offsets live in the navbar css under MAIN */
 main {
   flex: 1;
-  padding-top: 150px; /* compensates for the nav bar height */
 }
 /* END MAIN  */
 

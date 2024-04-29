@@ -1,102 +1,112 @@
 import React, { useEffect } from 'react';
 import NavLink from "./NavLink"
+import DarkMode from './Darkmode';
+import { Link } from 'react-router-dom';
 
 const NavBar2 = () => {
 
     useEffect(() => {
+        // section 1 - Add remove sticky class on scroll based on window position
         const handleScroll = () => {
-            if (window.scrollY > 100) {
-                document.querySelector('.main_h').classList.add('sticky');
+            if (window.scrollY > 80) {
+                document.querySelector('.nav_header').classList.add('sticky');
             } else {
-                document.querySelector('.main_h').classList.remove('sticky');
+                document.querySelector('.nav_header').classList.remove('sticky');
             }
         };
-
+        // section 2 - Opens Mobile Hamburger
         const handleMobileToggle = () => {
-            const main_h = document.querySelector('.main_h');
-            if (main_h.classList.contains('open-nav')) {
-                main_h.classList.remove('open-nav');
+            const nav_header = document.querySelector('.nav_header');
+            if (nav_header.classList.contains('open_nav')) {
+                nav_header.classList.remove('open_nav');
             } else {
-                main_h.classList.add('open-nav');
+                nav_header.classList.add('open_nav');
             }
         };
-
+        // section 3 - Closes the nav on page change
         const handleCloseNav = () => {
-            const main_h = document.querySelector('.main_h');
+            const nav_header = document.querySelector('.nav_header');
             const navigation = document.querySelector('.navigation');
-            if (main_h.classList.contains('open-nav')) {
-                navigation.classList.remove('open-nav');
-                main_h.classList.remove('open-nav');
+            if (nav_header.classList.contains('open_nav')) {
+                navigation.classList.remove('open_nav');
+                nav_header.classList.remove('open_nav');
             }
         };
 
-        const handleNavigationScroll = (event) => {
-            const id = event.target.getAttribute("href");
-            const offset = 70;
-            const target = document.querySelector(id).offsetTop - offset;
-            window.scrollTo({
-                top: target,
-                behavior: 'smooth'
-            });
-            event.preventDefault();
-        };
-
+        // section 4 - closes the mobile menu on click
         window.addEventListener('scroll', handleScroll);
-        document.querySelector('.mobile-toggle').addEventListener('click', handleMobileToggle);
-        document.querySelectorAll('.main_h li a').forEach(anchor => {
+        document.querySelector('.mobile_toggle').addEventListener('click', handleMobileToggle);
+        document.querySelectorAll('.nav_header li a').forEach(anchor => {
             anchor.addEventListener('click', handleCloseNav);
         });
-        document.querySelectorAll('nav a').forEach(anchor => {
-            anchor.addEventListener('click', handleNavigationScroll);
+
+        // section 5 - closes the mobile menu on dark mode theme change
+        const drawerLinkDark = document.querySelectorAll('.darkmode_input');
+        drawerLinkDark.forEach(input => { 
+            input.addEventListener('click', () => { 
+                setTimeout(() => {
+                    handleCloseNav()
+                }, 750);
+            });
         });
 
+        // section 6 - closes all event listeners
         return () => {
             window.removeEventListener('scroll', handleScroll);
-            document.querySelector('.mobile-toggle').removeEventListener('click', handleMobileToggle);
-            document.querySelectorAll('.main_h li a').forEach(anchor => {
+            document.querySelector('.mobile_toggle').removeEventListener('click', handleMobileToggle);
+            document.querySelectorAll('.nav_header li a').forEach(anchor => {
                 anchor.removeEventListener('click', handleCloseNav);
             });
-            document.querySelectorAll('nav a').forEach(anchor => {
-                anchor.removeEventListener('click', handleNavigationScroll);
+            const drawerLinkDark = document.querySelectorAll('.darkmode_input');
+            drawerLinkDark.forEach(input => { 
+                input.removeEventListener('click', () => { 
+                    setTimeout(() => {
+                        handleCloseNav()
+                    }, 750);
+                });
             });
         };
     }, []);
 
+    // Scrolls screen to content when arrow is clicked
+    const handleClick = () => {
+        const wrapper = document.querySelector('.nav_arrow');
+        wrapper.scrollIntoView({ 
+            top: wrapper.offsetTop + 30,
+            behavior: 'smooth'
+        });
+    }
+
+
     return(
         <>
-            <header className="main_h">
-
-                <div className="row">
-                    <a className="logo" href="/">SteakAndPlate</a>
-
-                    <div className="mobile-toggle">
-                        <span></span>
-                        <span></span>
-                        <span></span>
+            {/* NAV BAR (Appears on Scroll) */}
+            <header className="nav_header">
+                <div className="nav_row">
+                    {/* NavBar Title */}
+                    <Link className="logo" to="/">SteakAndPlate</Link>
+                    {/* END NavBar Title */}
+                    {/* Hamburger */}
+                    <div className="mobile_toggle">
+                        <label htmlFor="hamburger" id="hamburger"><span className="visually-hidden">Empty Link</span></label>
                     </div>
-
-                    <nav>
+                    {/* END Hamburger */}
+                    {/* Nav Links */}
+                    <nav className="navigation">
                         <ul>
-                            <li><a href=".sec05">Section 02</a></li>
-                            <li><NavLink to={"/"} text={ "Section 01 "}  /></li>
-                            <li><a href=".sec03">Section 03</a></li>
-                            <li><a href=".sec04">Section 04</a></li>
+                            <li><NavLink href={"/"} text={ "Home "} /></li>
+                            <li><NavLink href={"/split"} text={ "Split Demo "} /></li>
+                            <li><NavLink href={"/centered"} text={ "Centered Demo "} /></li>
+                            <li><NavLink href={"/inserts"} text={ "Inserts Demo "} /></li>
+                            <li className='darkmode_input'><DarkMode /></li>
                         </ul>
                     </nav>
-
+                    {/* END Nav Links */}
                 </div>
-
             </header>
-
-            <div className="hero">
-
-                <h1><span>steakandplate</span><br/>steak house</h1>
-
-                <div className="mouse">
-                    <a href=".wrapper"><i class="fa-solid fa-chevron-down fa-beat-fade fa-2xl"></i></a> 
-                    
-                </div>
-
+            {/* Initial Title (Leaves on Scroll) */}
+            <div className="nav_hero">
+                <h1><span>SteakAndPlate</span><br/>Steak House</h1>
             </div>
         </>
     );

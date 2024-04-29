@@ -33,7 +33,7 @@ const DarkMode = () => {
 
     return (
         <div className="dark_mode">
-            Dark Mode
+            {/* <p>Theme</p> */}
             <input onChange={toggle_theme} defaultChecked={selected_theme === "dark"} className="dark_mode_input" type="checkbox" id="darkmode_toggle" />
             <label className="dark_mode_label" htmlFor="darkmode_toggle">
                 <i id="sun" className="far fa-sun"></i>

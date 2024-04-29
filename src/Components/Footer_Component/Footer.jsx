@@ -24,7 +24,8 @@ const Footer = () => {
                 <div className="footer_link_column">
                     <FooterLink href="/" text="Home" />
                     <FooterLink href="/split" text="Split Demo" />
-                    <FooterLink href="/Centered" text="Centered Demo" />
+                    <FooterLink href="/centered" text="Centered Demo" />
+                    <FooterLink href="/inserts" text="Inserts Demo" />
                 </div>
             </div>
             {/* RIGHT SIDE OF FOOTER */}
