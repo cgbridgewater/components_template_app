@@ -45,7 +45,7 @@ const CardCarousel = () => {
 
         cards.forEach(card => {
             let pos = parseInt(card.dataset.pos, 10);
-            let formerPos = pos;
+            // let formerPos = pos;
             pos += direction;
             card.dataset.pos = pos;
             if (pos === 0) {
@@ -63,8 +63,7 @@ const CardCarousel = () => {
     }
 
     // -A- change cards with wheel
-    const handleWheel = (e) => {
-        e.preventDefault();
+    const handleWheel = () => {
         if (canChange) {
             const direction = Math.sign(e.deltaY);
             chgtCard += direction;
@@ -77,13 +76,11 @@ const CardCarousel = () => {
 
     // -B- change cards with touches
     const handleTouchStart = (e) => {
-        e.preventDefault();
         prevX = e.touches[0].clientX;
         prevY = e.touches[0].clientY;
     }
 
     const handleTouchMove = (e) => {
-        e.preventDefault();
         if (canChange) {
             let direction;
             let newX = e.touches[0].clientX;
