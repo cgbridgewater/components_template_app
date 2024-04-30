@@ -1,7 +1,7 @@
 const FooterLink_atag = ({ href, text }) => {
 
     return (
-        <a href={ href } target="_no"><span className="footer_link">{ text }</span></a>
+        <a href={ href } target="_blank" rel="noopener noreferrer"><span className="footer_link">{ text }</span></a>
     );
 };
 
