@@ -1,20 +1,39 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import NavLink from "./NavLink"
 import DarkMode from './Darkmode';
 import { Link } from 'react-router-dom';
 
 const NavBar2 = () => {
 
+    const navHeaderRef = useRef(null);
+
     useEffect(() => {
         // section 1 - Add remove sticky class on scroll based on window position
         const handleScroll = () => {
-            if (window.scrollY > 80) {
-                document.querySelector('.nav_header').classList.add('sticky');
+            const nav_header = document.querySelector('.nav_header');
+            if (window.scrollY > 16) {
+                nav_header.classList.add('sticky');
             } else {
-                document.querySelector('.nav_header').classList.remove('sticky');
+                nav_header.classList.remove('sticky');
+            }
+            if (nav_header) {
+                if (window.scrollY > 5) {
+                    nav_header.classList.remove('open_nav');
+                } else {
+                    nav_header.classList.remove('open_nav');
+                }
             }
         };
-        // section 2 - Opens Mobile Hamburger
+
+        // section 2 - Closes Mobile Hamburger when clicked outside of navbar
+        const handleClickOutside = (event) => {
+            if (navHeaderRef.current && !navHeaderRef.current.contains(event.target)) {
+                const nav_header = document.querySelector('.nav_header');
+                nav_header.classList.remove('open_nav');
+            }
+        };
+
+        // section 3 - Opens Mobile Hamburger
         const handleMobileToggle = () => {
             const nav_header = document.querySelector('.nav_header');
             if (nav_header.classList.contains('open_nav')) {
@@ -23,7 +42,8 @@ const NavBar2 = () => {
                 nav_header.classList.add('open_nav');
             }
         };
-        // section 3 - Closes the nav on page change
+
+        // section 4 - Closes the nav on page change
         const handleCloseNav = () => {
             const nav_header = document.querySelector('.nav_header');
             const navigation = document.querySelector('.navigation');
@@ -31,16 +51,20 @@ const NavBar2 = () => {
                 navigation.classList.remove('open_nav');
                 nav_header.classList.remove('open_nav');
             }
+            if (nav_header.classList.contains('open_nav')) {
+                nav_header.classList.remove('open_nav');
+            }
         };
-
-        // section 4 - closes the mobile menu on click
+        
+        // section 5 - closes the mobile menu on click
+        document.addEventListener('mousedown', handleClickOutside);
         window.addEventListener('scroll', handleScroll);
         document.querySelector('.mobile_toggle').addEventListener('click', handleMobileToggle);
         document.querySelectorAll('.nav_header li a').forEach(anchor => {
             anchor.addEventListener('click', handleCloseNav);
         });
 
-        // section 5 - closes the mobile menu on dark mode theme change
+        // section 6 - closes the mobile menu on dark mode theme change
         const drawerLinkDark = document.querySelectorAll('.darkmode_input');
         drawerLinkDark.forEach(input => { 
             input.addEventListener('click', () => { 
@@ -50,8 +74,9 @@ const NavBar2 = () => {
             });
         });
 
-        // section 6 - closes all event listeners
+        // section 7 - closes all event listeners
         return () => {
+            document.removeEventListener('mousedown', handleClickOutside);
             window.removeEventListener('scroll', handleScroll);
             document.querySelector('.mobile_toggle').removeEventListener('click', handleMobileToggle);
             document.querySelectorAll('.nav_header li a').forEach(anchor => {
@@ -68,20 +93,11 @@ const NavBar2 = () => {
         };
     }, []);
 
-    // Scrolls screen to content when arrow is clicked
-    const handleClick = () => {
-        const wrapper = document.querySelector('.nav_arrow');
-        wrapper.scrollIntoView({ 
-            top: wrapper.offsetTop + 30,
-            behavior: 'smooth'
-        });
-    }
-
 
     return(
         <>
             {/* NAV BAR (Appears on Scroll) */}
-            <header className="nav_header">
+            <header ref={navHeaderRef} className="nav_header">
                 <div className="nav_row">
                     {/* NavBar Title */}
                     <Link className="logo" to="/">SteakAndPlate</Link>
