@@ -13,6 +13,7 @@
 @import url("./Components/Slideshow_Component/Slideshow_Style.css");
 @import url("./Components/CardCarousel/CardCarousel_Style.css");
 @import url("./Components/Button_Component/button.css");
+@import url("./Components/Movement_OnScroll/Movement_OnScroll_Style.css");
 @import url("./Views/ErrorPageView/ErrorPageStyle.css");
 /*                       */
 /*     MAIN APP CSS      */
@@ -90,6 +91,11 @@ html {
   background-color: var(--background);
   overflow-x: hidden;
   transition: all 800ms ease;
+}
+
+/* Prevents white flash when page is reset in dark mode */
+body {
+  background-color: var(--background);
 }
 
 /* MAIN  -- TO BE USED ON ALL VIEW PAGES */

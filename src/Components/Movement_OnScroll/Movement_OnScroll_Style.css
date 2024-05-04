@@ -1,0 +1,27 @@
+/* keeps element hidden on load */
+.hidden {
+    opacity: 0;
+    transition: all 700ms ease-in;
+    overflow: hidden;
+}
+
+/* set to slide div from left */
+.left {
+    transform: translateX(-250px);
+}
+
+/* set to slide div from right */
+.right {
+    transform: translateX(250px);
+}
+
+.bottom {
+    transform: translateY(250px);
+}
+
+/* reveals the hidden class item */
+.show {
+    transform: translateX(0);
+    transform: translateY(0);
+    opacity: 1;
+}

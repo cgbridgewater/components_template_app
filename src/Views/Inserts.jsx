@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import Button from "../Components/Button_Component/Button";
 import CardCarousel from "../Components/CardCarousel/CardCarousel";
 import Slideshow from "../Components/Slideshow_Component/Slideshow";
+import Movement_OnScroll from "../Components/Movement_OnScroll/Movement_OnScroll";
 
 const Inserts = () => {
 
@@ -66,6 +67,10 @@ const Inserts = () => {
                     </p>
                 </div>
                 {/* END CENTERED BOX INSERT */}
+
+                {/* MOVEMENT ON SCROLL INSERT */}
+                <Movement_OnScroll />
+                {/* MOVEMENT ON SCROLL INSERT */}
 
             </div>
         </main>

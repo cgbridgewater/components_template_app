@@ -1,3 +1,5 @@
+import { useEffect } from 'react';
+
 const DarkMode = () => {
 
     const set_dark_mode = () => {
@@ -24,17 +26,19 @@ const DarkMode = () => {
         }
     };
 
-    const selected_theme = localStorage.getItem("selected_theme");
-    if (selected_theme === "dark") {
-        set_dark_mode();
-    } else {
-        set_light_mode();
-    }
+    useEffect(() => {
+        const selected_theme = localStorage.getItem("selected_theme");
+        if (selected_theme === "dark") {
+            set_dark_mode();
+        } else {
+            set_light_mode();
+        }
+    }, []);
 
     return (
         <div className="dark_mode">
             {/* <p>Theme</p> */}
-            <input onChange={toggle_theme} defaultChecked={selected_theme === "dark"} className="dark_mode_input" type="checkbox" id="darkmode_toggle" />
+            <input onChange={toggle_theme} defaultChecked={localStorage.getItem("selected_theme") === "dark"} className="dark_mode_input" type="checkbox" id="darkmode_toggle" />
             <label className="dark_mode_label" htmlFor="darkmode_toggle">
                 <i id="sun" className="far fa-sun"></i>
                 <i id="moon" className="far fa-moon"></i>
