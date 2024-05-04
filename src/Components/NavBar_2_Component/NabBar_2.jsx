@@ -10,12 +10,14 @@ const NavBar2 = () => {
     useEffect(() => {
         // section 1 - Add remove sticky class on scroll based on window position
         const handleScroll = () => {
+            // Attaches nav bar once below 16px from top
             const nav_header = document.querySelector('.nav_header');
             if (window.scrollY > 16) {
                 nav_header.classList.add('sticky');
             } else {
                 nav_header.classList.remove('sticky');
             }
+            // closes nav bar mobile if scrolled away from nav
             if (nav_header) {
                 if (window.scrollY > 5) {
                     nav_header.classList.remove('open_nav');
@@ -56,11 +58,19 @@ const NavBar2 = () => {
             }
         };
         
-        // section 5 - closes the mobile menu on click
+        // section 5 - Event listeners to trigger functions
+        // closes mobile nav when clicked outside of nav area
         document.addEventListener('mousedown', handleClickOutside);
+        // closes nav if window is scrolled
         window.addEventListener('scroll', handleScroll);
+        // opens/closes mobel window when hamburger is clicked
         document.querySelector('.mobile_toggle').addEventListener('click', handleMobileToggle);
+        // closes nav based on link click
         document.querySelectorAll('.nav_header li a').forEach(anchor => {
+            anchor.addEventListener('click', handleCloseNav);
+        });
+        // closes nav based on Logo click
+        document.querySelectorAll('.logo').forEach(anchor => {
             anchor.addEventListener('click', handleCloseNav);
         });
 
@@ -84,11 +94,7 @@ const NavBar2 = () => {
             });
             const drawerLinkDark = document.querySelectorAll('.darkmode_input');
             drawerLinkDark.forEach(input => { 
-                input.removeEventListener('click', () => { 
-                    setTimeout(() => {
-                        handleCloseNav()
-                    }, 750);
-                });
+                input.removeEventListener('click', handleCloseNav);
             });
         };
     }, []);
