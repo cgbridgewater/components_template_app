@@ -26,7 +26,7 @@ function App() {
           <Route path="/split" element={<SplitPage />} />
 
           <Route path="/inserts" element={<Inserts />} />
-          <Route path="/:bad/*" element={<ErrorPage/>} />
+          <Route path="*" element={<ErrorPage/>} />
         </Routes>
         {/* chatbox here */}
         <GoToTopButton />
