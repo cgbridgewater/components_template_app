@@ -120,6 +120,7 @@ const NavBar2 = () => {
                             <li><NavLink href={"/split"} text={ "Split Demo "} /></li>
                             <li><NavLink href={"/centered"} text={ "Centered Demo "} /></li>
                             <li><NavLink href={"/inserts"} text={ "Inserts Demo "} /></li>
+                            <li><NavLink href={"/login"} text={ "Login "} /></li>
                             <li className='darkmode_input'><DarkMode /></li>
                         </ul>
                     </nav>

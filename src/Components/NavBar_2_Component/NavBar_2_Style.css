@@ -77,11 +77,11 @@ nav ul {
     overflow: hidden;
     text-align: right;
     float: right;
-    width: 600px;
+    width: 650px;
 
     li {
         display: inline-block;
-        margin-left: 35px;
+        margin-left: 24px;
         line-height: 1.5;
     }
 }

@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import Button from "../Components/Button_Component/Button";
-import CardCarousel from "../Components/CardCarousel/CardCarousel";
+import CardCarousel from "../Components/CardCarousel_Component/CardCarousel";
 import Slideshow from "../Components/Slideshow_Component/Slideshow";
 import Movement_OnScroll from "../Components/Movement_OnScroll/Movement_OnScroll";
 

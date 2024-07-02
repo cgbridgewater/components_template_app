@@ -9,6 +9,7 @@ import GoToTopButton from './Components/Go_To_Top_Component/GoToTop'
 import Footer from './Components/Footer_Component/Footer'
 import './App.css'
 import NavBar2 from './Components/NavBar_2_Component/NabBar_2'
+import LoginRegister from './Components/LoginRegister_Component/LoginRegister'
 
 function App() {
 
@@ -24,8 +25,9 @@ function App() {
           <Route exact path="/" element={<Index />} />
           <Route path="/centered" element={<CenteredPage />} />
           <Route path="/split" element={<SplitPage />} />
-
           <Route path="/inserts" element={<Inserts />} />
+          <Route path="/login" element={<LoginRegister />} />
+
           <Route path="*" element={<ErrorPage/>} />
         </Routes>
         {/* chatbox here */}
