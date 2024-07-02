@@ -84,6 +84,7 @@ footer {
 
 .footer_image_one {
     height: 65px;
+    margin-bottom: 8px;
 }
 
 @media screen and (max-width: 870px) {
