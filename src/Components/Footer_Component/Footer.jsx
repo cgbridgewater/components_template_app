@@ -1,5 +1,6 @@
 import FooterLink_atag from "./FooterLink_atag";
 import FooterLink from "./FooterLink";
+import { Link } from "react-router-dom"
 
 const Footer = () => {
     return (
@@ -32,7 +33,7 @@ const Footer = () => {
             <div className="footer_badges">
                 {/* Footer Owner Badges */}
                 <div className="footer_images">
-                    <img className="footer_image_one" src="https://mattcarterauthor.weebly.com/uploads/1/9/5/2/19525625/819762509.jpeg?39" alt="BTTF" />
+                    <Link to="/"><img className="footer_image_one" src="https://mattcarterauthor.weebly.com/uploads/1/9/5/2/19525625/819762509.jpeg?39" alt="BTTF" /></Link>
                 </div>
                 {/* Footer Socials */}
                 <div className="footer_socials">

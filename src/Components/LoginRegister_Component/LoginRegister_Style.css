@@ -6,29 +6,180 @@
 .form_wrapper {
     width: 35%;
     min-width: 320px;
-    height: 450px;
+    max-width: 550px;
     margin: 0 auto;
-    -webkit-overflow-scrolling: touch;
-    position: relative;
-    background-color: var(--green);
-    border-radius: 10px;
 
     * {
         font-family: "Poppins", sans-serif;
+        transition: all 300ms ease;
     }
 
-    .form-box {
+    .form_box {
         width: 100%;
-        padding: 40px;
+        padding: 40px 40px 16px 40px;
+        -webkit-overflow-scrolling: touch;
+        position: relative;
+        background-color: var(--yellow);
+        border: thin solid var(--black);
+        border-radius: 10px;
+    }
+}
+
+form {
+    h1 {
+        font-size: 2.5rem;
+        text-align: center;
+    }
+
     
-    
-    
-    
-    
-        icon {
-    
+
+    button {
+        width: 100%;
+        height: 45px;
+        background: #fff;
+        border: none;
+        outline: none;
+        border-radius: 40px;
+        box-shadow: 0 2px 5px rgba(127, 116, 116, 0.25);
+        cursor: pointer;
+        font-size: 1rem;
+        color: var(--black_fulltime);
+        font-weight: 700;
+
+        &:hover {
+            box-shadow: 0 5px 10px rgba(127, 116, 116, 0.5)
+        }
+    }
+
+    .register_link {
+        p {
+            max-width: 300px;
+            color: var(--black);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.95rem;
+            margin: 15px auto;
+        }
+    }
+
+    .remember_forgot {
+        max-width: 300px;
+        color: var(--black);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        font-size: 0.95rem;
+        margin: -15px auto 15px;
+
+        label input {
+            accent-color: var(--black);
+            margin-right: 4px;
         }
     }
 }
 
 
+form .input_box {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    margin: 30px 0;
+
+    input {
+        width: 100%;
+        height: 100%;
+        background: transparent;
+        border: none;
+        outline: none;
+        border: 2px solid rgba(255,255,255, 0.5);
+        border-radius: 40px;
+        font-size: 1rem;
+        color: var(--black);
+        padding: 20px 45px 20px 20px;
+
+        &:hover {
+            border: 2px solid rgba(255,255,255, 0.9);
+        }
+        &::placeholder {
+            color: rgba(255,255,255, 0.8)
+        }
+    }
+
+
+    .icon {
+        color: var(--black);
+        position: absolute;
+        right: 20px;
+        top: 50%;
+        translate: 0 -50%;
+        font-size: 1.2rem;
+    }
+}
+
+
+
+
+
+.form_link {
+    color: var(--black);
+    font-weight: 600;
+    position: relative;
+    /* top: -2px; */
+    font-size: 0.95rem;
+    text-decoration: none;
+    cursor: pointer;
+    text-wrap: nowrap;
+    border-bottom: 1px solid var(--black);
+    -webkit-transition: border-bottom 1s ease;
+    transition: border-bottom 1s ease;
+    
+    &:hover {
+        color: var(--white);
+        border-bottom: transparent;
+
+    }
+    &::before {
+        left: 0; 
+
+    }
+    &::after {
+        right: 0;
+    }
+}
+
+
+
+.form_link:before, .form_link:after {
+    content: '';
+    border-bottom: 1px solid var(--white);
+    position: absolute;
+    bottom: 0;
+    width: 0;
+    -webkit-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+}
+.form_link:hover:before, .form_link:hover:after {
+    width: 50%;
+}
+
+
+
+
+
+
+/* Adapt for screen size changes */
+@media (max-width: 1180px) {
+    form .register_link p, form .remember_forgot  {
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+    }
+}
+
+@media only screen and (min-width:1181px) {
+    .label_break {
+        display:none !important;
+    }
+}

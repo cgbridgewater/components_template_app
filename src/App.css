@@ -34,6 +34,7 @@
   --off_white: #F5F5F5;
   --light_yellow: #F6E8B7;
   --dark_yellow: #EFD780;
+  --yellow: #EFD780;
   --green: #18AC58;
   --red: #c60505;
   --shadow: #979393;
@@ -52,7 +53,7 @@
   --black: #CBE5EC;
   --off_white: #CBE5EC50;
   /* --light_yellow: #161625; */
-  /* --dark_yellow: #182445; */
+  --yellow: #182445;  
   --green: #6DA182;
   --red: #960000;
   --shadow: #645489;
