@@ -7,23 +7,31 @@ const LoginRegister = () => {
     const [regname, setRegname] = useState("");
     const [regemail, setRegemail] = useState("");
     const [regpass, setRegpass] = useState("");
+    const [regconfpass, setRegconfpass] = useState("");
     const [signinname, setSigninname] = useState("");
     const [signinpass, setSigninpass] = useState("");
 
+    // Function to slide to Signup side and clear login form out
     const register_link = (e) => {
         e.preventDefault();
-        setAction(" active")
+        setSigninname("");
+        setSigninpass("");
+        setAction(" active");
     }
 
+    // Function to slide to login side and clear signup form out
     const login_link = (e) => {
         e.preventDefault();
-        setAction("")
+        setRegname("");
+        setRegemail("");
+        setRegpass("");
+        setRegconfpass("");
+        setAction("");
     }
-
 
     return (
         <main>
-            <div className='wrapper'>
+            <div className='wrapper background'>
                 {/* LOGIN REG WRAPPER*/}
                 <div className={`form_wrapper${action}`}>
                     {/* LOGIN FORM */}
