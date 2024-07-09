@@ -43,8 +43,8 @@ const LoginRegister = () => {
                             </div>
                             {/* REMEMBER ME CHECK */}
                             <div className="remember_forgot">
-                                <label htmlFor="">
-                                    <input type="checkbox" />Remember Me
+                                <label htmlFor="remember_me">
+                                    <input id="remember_me" type="checkbox" />Remember Me
                                 </label>
                                 <a  href="#"><span className="form_link">Forgot Password</span></a>
                             </div>
@@ -86,8 +86,8 @@ const LoginRegister = () => {
                             </div>
                             {/* AGREE TO TERMS CHECKBOX */}
                             <div className="remember_forgot">
-                                <label htmlFor="">
-                                    <input type="checkbox" />I agree to the&nbsp;
+                                <label htmlFor="i_agree">
+                                    <input id="i_agree" type="checkbox" />I agree to the&nbsp;
                                     <a href="#"><span className="form_link">Terms & Conditions</span></a>
                                 </label>
                             </div>

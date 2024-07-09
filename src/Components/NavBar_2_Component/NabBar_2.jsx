@@ -110,7 +110,7 @@ const NavBar2 = () => {
                     {/* END NavBar Title */}
                     {/* Hamburger */}
                     <div className="mobile_toggle">
-                        <label htmlFor="hamburger" id="hamburger"><span className="visually-hidden">Empty Link</span></label>
+                        <label><span className="visually-hidden">Empty Link</span></label>
                     </div>
                     {/* END Hamburger */}
                     {/* Nav Links */}
