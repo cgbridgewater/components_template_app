@@ -1,53 +1,110 @@
 /* Login And Registration Style Page */
 
+/* FORM FONTS */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 
+/* FORM CONTAINER SIZING */
 .form_wrapper {
+    position: relative;
     width: 35%;
     min-width: 320px;
-    max-width: 550px;
-    margin: 0 auto;
+    max-width: 425px;
+    height: 475px;
+    padding-bottom: 16px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    background-color: var(--green);
+    border: thin solid var(--black);
+    border-radius: 10px;
+    transition: height 0.3s ease;
 
     * {
         font-family: "Poppins", sans-serif;
-        transition: all 300ms ease;
     }
 
     .form_box {
         width: 100%;
-        padding: 40px 40px 16px 40px;
+        max-width: 425px;
         -webkit-overflow-scrolling: touch;
         position: relative;
-        background-color: var(--yellow);
-        border: thin solid var(--black);
-        border-radius: 10px;
+
+        &.login, &.register {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+
+    &.active {
+        height: 580px;
     }
 }
 
+/*            */
+/* FORM STYLE */
+/*            */
 form {
+    width: 90%;
+
     h1 {
+        color: var(--black);
         font-size: 2.5rem;
         text-align: center;
     }
 
-    
-
     button {
         width: 100%;
-        height: 45px;
-        background: #fff;
-        border: none;
-        outline: none;
+        height: 50px;
+        position:relative;
+        overflow:hidden;
+        border:thin solid var(--img_trim);
         border-radius: 40px;
-        box-shadow: 0 2px 5px rgba(127, 116, 116, 0.25);
-        cursor: pointer;
-        font-size: 1rem;
-        color: var(--black_fulltime);
-        font-weight: 700;
+        transition:all .25s ease-in-out;
+        background-color: var(--button_bg);
 
         &:hover {
-            box-shadow: 0 5px 10px rgba(127, 116, 116, 0.5)
+            border: thin solid var(--white_fulltime);
+
+            span {
+                    color: var(--white_fulltime);
+            }
+        }
+
+        span {
+            position:relative;
+            padding: 20px;
+            text-transform:uppercase;
+            color: var(--black);
+            font-weight:900;
+            letter-spacing:1px;
+            border: none;
+            font-size: 1.25rem;
+            outline:none;
+            cursor: pointer;
+        }
+
+        &::before {
+            content:" ";
+            display:block;
+            width:150px;
+            height: 60px;
+            background: #CBE5EC50;
+            position:absolute;
+            top:-5px;
+            left:-150px;
+            transform:rotate(45deg);
+            transition:all .15s ease-in-out;  
+            z-index:1;
+        }
+
+        &:hover:before {
+            margin-left:150%;
+        }
+
+        &:active {
+            top: 4px;
         }
     }
 
@@ -69,7 +126,6 @@ form {
         display: flex;
         justify-content: space-between;
         align-items: center;
-
         font-size: 0.95rem;
         margin: -15px auto 15px;
 
@@ -78,55 +134,87 @@ form {
             margin-right: 4px;
         }
     }
-}
 
-
-form .input_box {
-    position: relative;
-    width: 100%;
-    height: 50px;
-    margin: 30px 0;
-
-    input {
+    .input_box {
+        position: relative;
         width: 100%;
-        height: 100%;
-        background: transparent;
-        border: none;
-        outline: none;
-        border: 2px solid rgba(255,255,255, 0.5);
-        border-radius: 40px;
-        font-size: 1rem;
-        color: var(--black);
-        padding: 20px 45px 20px 20px;
+        height: 50px;
+        margin: 30px 0;
 
-        &:hover {
-            border: 2px solid rgba(255,255,255, 0.9);
+        input {
+            width: 100%;
+            height: 100%;
+            background: transparent;
+            border: none;
+            outline: none;
+            border: 2px solid rgba(255,255,255, 0.5);
+            border-radius: 40px;
+            font-size: 1rem;
+            color: var(--black);
+            font-weight: 700;
+            padding: 20px 45px 20px 20px;
+
+            &:hover {
+                border: 2px solid rgba(255,255,255, 0.9);
+            }
+
+            &::placeholder {
+                color: rgba(255,255,255, 0.4);
+                font-weight: normal;
+            }
         }
-        &::placeholder {
-            color: rgba(255,255,255, 0.8)
+
+        .icon {
+            color: var(--black);
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            translate: 0 -50%;
+            font-size: 1.2rem;
         }
-    }
-
-
-    .icon {
-        color: var(--black);
-        position: absolute;
-        right: 20px;
-        top: 50%;
-        translate: 0 -50%;
-        font-size: 1.2rem;
     }
 }
+/*                */
+/* END FORM STYLE */
+/*                */
 
 
+/*                   */
+/* FORM SLIDE ACTION */
+/*                   */
+.form_wrapper .form_box.login {
+    transition: translate 0.25s ease;
+    translate: 0;
+}
+
+.form_wrapper.active .form_box.login {
+    transition: none;
+    translate: -425px;
+}
+
+.form_wrapper .form_box.register {
+    position: absolute;
+    transition: none;
+    translate: 425px;
+}
+
+.form_wrapper.active .form_box.register {
+    transition: translate 0.25s ease;
+    translate: 0;
+}
+/*                       */
+/* END FORM SLIDE ACTION */
+/*                       */
 
 
-
+/*                 */
+/* FORM LINK STYLE */
+/*                 */
 .form_link {
     color: var(--black);
     font-weight: 600;
     position: relative;
-    /* top: -2px; */
+    top: -1.5px;
     font-size: 0.95rem;
     text-decoration: none;
     cursor: pointer;
@@ -134,52 +222,49 @@ form .input_box {
     border-bottom: 1px solid var(--black);
     -webkit-transition: border-bottom 1s ease;
     transition: border-bottom 1s ease;
-    
-    &:hover {
-        color: var(--white);
-        border-bottom: transparent;
 
+    &:hover {
+        color: var(--white_fulltime);
+        border-bottom: transparent;
     }
+
     &::before {
         left: 0; 
-
     }
+
     &::after {
         right: 0;
     }
 }
 
-
-
 .form_link:before, .form_link:after {
     content: '';
-    border-bottom: 1px solid var(--white);
+    border-bottom: 1px solid var(--white_fulltime);
     position: absolute;
     bottom: 0;
     width: 0;
     -webkit-transition: all 0.4s ease;
     transition: all 0.4s ease;
 }
+
 .form_link:hover:before, .form_link:hover:after {
     width: 50%;
 }
+/*                     */
+/* END FORM LINK STYLE */
+/*                     */
 
 
-
-
-
-
-/* Adapt for screen size changes */
-@media (max-width: 1180px) {
+/*                      */
+/* SCREEN SIZE RESPONSE */
+/*                      */
+@media (max-width: 1190px) {
     form .register_link p, form .remember_forgot  {
         flex-direction: column;
         justify-content: center;
         text-align: center;
     }
 }
-
-@media only screen and (min-width:1181px) {
-    .label_break {
-        display:none !important;
-    }
-}
+/*                          */
+/* END SCREEN SIZE RESPONSE */
+/*                          */

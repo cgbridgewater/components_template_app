@@ -27,7 +27,8 @@
   --font_size_default: 16px;
   --image_brightness: 100%; /* Image Brightness for light color theme */
   --background: #EFEFEF;
-  --white_text: #CBE5EC;
+  --white_text: hsl(193, 46%, 86%);
+  --white_fulltime: #F5F5F5;
   --white: #FFF;
   --black:#0F2F47;
   --black_fulltime: #0F2F47;
