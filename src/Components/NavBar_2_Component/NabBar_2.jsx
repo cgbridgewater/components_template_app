@@ -106,11 +106,11 @@ const NavBar2 = () => {
             <header ref={navHeaderRef} className="nav_header">
                 <div className="nav_row">
                     {/* NavBar Title */}
-                    <Link className="logo" to="/">SteakAndPlate</Link>
+                    <Link className="logo" to="/">McTesterson's</Link>
                     {/* END NavBar Title */}
                     {/* Hamburger */}
                     <div className="mobile_toggle">
-                        <label><span className="visually-hidden">Empty Link</span></label>
+                        <label htmlFor="hamburger" id="hamburger"><span className="visually-hidden">Empty Link</span></label>
                     </div>
                     {/* END Hamburger */}
                     {/* Nav Links */}
@@ -129,7 +129,7 @@ const NavBar2 = () => {
             </header>
             {/* Initial Title (Leaves on Scroll) */}
             <div className="nav_hero">
-                <h1><span>SteakAndPlate</span><br/>Steak House</h1>
+                <h1><span>McTesterson's</span><br/>Test App</h1>
             </div>
         </>
     );
