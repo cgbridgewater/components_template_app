@@ -268,13 +268,13 @@ nav ul a:hover:before, nav ul a:hover:after {
     }
     #sun {
         left: 3.25px;
-        color: #636363;
+        color: #ffffffbb;
         transition: all 0.15s ease;
     }
     #moon {
         left: 36px;
         top: 5.75px;
-        color: #636363;
+        color: #ffffffbb;
         transition: all 0.15s ease;
     }
 }
