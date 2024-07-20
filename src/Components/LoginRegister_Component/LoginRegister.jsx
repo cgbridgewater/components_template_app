@@ -87,6 +87,9 @@ const LoginRegister = () => {
     // END FORM TOGGLE CONTROL //
     //                         //
 
+        // FRONT END EMAIL VALIDATION //
+        const isValidEmail = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/.test(registrationForm.email);
+        //                            //
 
     return (
         <main>
@@ -189,7 +192,7 @@ const LoginRegister = () => {
                                 </label>
                             </div>
                             {/* SUBMIT BBUTTON */}
-                            <button type="submit" disabled={!agree}><span>Sign Up</span></button>
+                            <button type="submit" disabled={!agree || !isValidEmail || registrationForm.password.length < 8 || registrationForm.confirmPassword !== registrationForm.password}><span>Sign Up</span></button>
                             {/* SIGNUP LINK */}
                             <div className="register_link">
                                 <p>
