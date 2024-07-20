@@ -12,12 +12,12 @@
     width: 35%;
     min-width: 320px;
     max-width: 425px;
-    height: 415px;
+    height: 445px;
     padding-bottom: 16px;
     display: flex;
     align-items: center;
     overflow: hidden;
-    background-color: var(--green);
+    background-color: var(--pink);
     /* border: thin solid var(--black); */
     border: 2px solid rgba(255,255,255, 0.1);
     border-radius: 10px;
@@ -41,7 +41,7 @@
     }
 
     &.active {
-        height: 480px;
+        height: 510px;
     }
 }
 /*                    */
@@ -162,11 +162,16 @@ form {
         label input {
             margin-right: 4px;
             accent-color: var(--black);
+
+            &:hover {
+                accent-color: var(--button_bg);
+            }
         }
         
         a, label input {
             position: relative;
             top:1.5px;
+
         }
     }
 
