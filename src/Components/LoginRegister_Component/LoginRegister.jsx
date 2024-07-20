@@ -88,7 +88,8 @@ const LoginRegister = () => {
     //                         //
 
         // FRONT END EMAIL VALIDATION //
-        const isValidEmail = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/.test(registrationForm.email);
+        const isValidRegisterEmail = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/.test(registrationForm.email);
+        const isValidSigninEmail = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/.test(loginForm.email);
         //                            //
 
     return (
@@ -133,7 +134,7 @@ const LoginRegister = () => {
                                 <a  href="#"><span className="form_link">Forgot Password</span></a>
                             </div>
                             {/* SUBMIT BUTTON */}
-                            <button type="submit"><span>Login</span></button>
+                            <button type="submit" disabled={!isValidSigninEmail || loginForm.password.length < 8}><span>Login</span></button>
                             {/* REGISTER LINK */}
                             <div className="register_link">
                                 <p>
@@ -192,7 +193,7 @@ const LoginRegister = () => {
                                 </label>
                             </div>
                             {/* SUBMIT BBUTTON */}
-                            <button type="submit" disabled={!agree || !isValidEmail || registrationForm.password.length < 8 || registrationForm.confirmPassword !== registrationForm.password}><span>Sign Up</span></button>
+                            <button type="submit" disabled={!agree || !isValidRegisterEmail || registrationForm.password.length < 8 || registrationForm.confirmPassword !== registrationForm.password}><span>Sign Up</span></button>
                             {/* SIGNUP LINK */}
                             <div className="register_link">
                                 <p>
