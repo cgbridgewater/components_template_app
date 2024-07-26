@@ -1,10 +1,13 @@
 import React, { useState } from 'react'
 import { FaUser, FaLock, FaEnvelope } from "react-icons/fa";
 import { useNavigate } from 'react-router-dom';
+import Modal_Component from '../Modal_Component/Modal_Component';
 
 const LoginRegister = () => {
 
     const navigate = useNavigate();
+
+    const [isOpen, setIsOpen] = useState(false);
 
     //                                 //
     // REGISTRATION STATE AND HANDLING //
@@ -189,7 +192,8 @@ const LoginRegister = () => {
                             <div className="remember_forgot">
                                 <label htmlFor="i_agree">
                                     <input id="i_agree" type="checkbox" onChange={handleAgreeChange} checked={agree}/>I agree to the&nbsp;
-                                    <a href="#"><span className="form_link">Terms & Conditions</span></a>
+                                    <span className="form_link"><Modal_Component isOpen={isOpen} setIsOpen={setIsOpen} /></span>
+                                    {/* <span className="form_link">Terms & Conditions</span> */}
                                 </label>
                             </div>
                             {/* SUBMIT BBUTTON */}

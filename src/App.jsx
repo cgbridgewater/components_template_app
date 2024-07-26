@@ -9,7 +9,7 @@ import GoToTopButton from './Components/Go_To_Top_Component/GoToTop'
 import Footer from './Components/Footer_Component/Footer'
 import './App.css'
 import NavBar2 from './Components/NavBar_2_Component/NabBar_2'
-import LoginRegister from './Components/LoginRegister_Component/LoginRegister'
+import Login from './Views/Login'
 
 function App() {
 
@@ -26,7 +26,7 @@ function App() {
           <Route path="/centered" element={<CenteredPage />} />
           <Route path="/split" element={<SplitPage />} />
           <Route path="/inserts" element={<Inserts />} />
-          <Route path="/login" element={<LoginRegister />} />
+          <Route path="/login" element={<Login />} />
 
           <Route path="*" element={<ErrorPage/>} />
         </Routes>
