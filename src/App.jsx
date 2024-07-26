@@ -1,15 +1,21 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import './App.css'
+// VIEW PAGES //
 import Index from './Views/Index'
 import CenteredPage from './Views/CenteredPage'
 import SplitPage from './Views/SplitPage'
 import Inserts from './Views/Inserts'
-import NavBar from './Components/NavBar_Component/NavBar'
+import Login from './Views/Login'
 import ErrorPage from './Views/ErrorPageView/ErrorPage'
+// END VIEW PAGES //
+
+// HEADER, FOOTER, GO TO TOP BUTTON //
 import GoToTopButton from './Components/Go_To_Top_Component/GoToTop'
 import Footer from './Components/Footer_Component/Footer'
-import './App.css'
+// import NavBar from './Components/NavBar_Component/NavBar'
 import NavBar2 from './Components/NavBar_2_Component/NabBar_2'
-import Login from './Views/Login'
+// END HEADER, FOOTER, GO TO TOP BUTTON //
+
 
 function App() {
 

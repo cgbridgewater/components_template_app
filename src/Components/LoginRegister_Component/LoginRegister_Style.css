@@ -9,6 +9,8 @@
 /*                */
 .form_wrapper {
     position: relative;
+    top: 0%;
+    left: 8px;
     width: 35%;
     min-width: 320px;
     max-width: 425px;
@@ -18,8 +20,8 @@
     align-items: center;
     overflow: hidden;
     background-color: var(--pink);
-    /* border: thin solid var(--black); */
-    border: 2px solid rgba(255,255,255, 0.1);
+    
+    border: 1px solid var(--shadow);
     border-radius: 10px;
     transition: height 0.4s ease;
 
@@ -254,19 +256,19 @@ form {
     color: var(--black);
     font-weight: 600;
     position: relative;
-    top: -1.5px;
+    top: 0px;
     left: 2px;
     font-size: 0.95rem;
     text-decoration: none;
     cursor: pointer;
     text-wrap: nowrap;
     border-bottom: 1px solid var(--black);
-    -webkit-transition: border-bottom 1s ease;
-    transition: border-bottom 1s ease;
+    -webkit-transition: border-bottom .1s ease;
+    transition: border-bottom .1s ease;
 
     &:hover {
         color: var(--white_fulltime);
-        border-bottom: transparent;
+        border-bottom: 1px solid transparent;
     }
 
     &::before {
@@ -296,6 +298,115 @@ form {
 /*                     */
 
 
+/*                */
+/*  MODAL STYLES  */
+/*                */
+.modal_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal_overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.85);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+}
+
+.modal_content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Shift back by half width and height */
+    background-color: var(--shadow);
+    border: 2px solid var(--pink);
+    padding: 14px 20px 20px 20px;
+    border-radius: 5px;
+    width: calc(35% * 0.9);
+    min-width: 320px;
+    max-width: 425px;
+    max-height: 87vh;
+    overflow-y:auto; /* Enable vertical scrolling */
+    scrollbar-width: none; /* Firefox */
+
+    &::-webkit-scrollbar { 
+        display: none; /* For Chrome, Safari, and Opera */
+    }
+
+    h3 {
+        font-size: 1.3rem;
+        text-align: center;
+        margin-bottom: 16px;
+    }
+    
+    p {
+        margin-bottom: 8px;
+        font-size: .95rem;
+    }
+}
+
+.close_button {
+    width: 100%;
+    height: 50px;
+    margin-top: 16px;
+    position:relative;
+    overflow:hidden;
+    border:thin solid var(--img_trim);
+    border-radius: 40px;
+    transition:all .25s ease-in-out;
+    background-color: var(--pink);
+
+    &:hover {
+        border: thin solid var(--white_fulltime);
+
+        span {
+                color: var(--white_fulltime);
+        }
+    }
+
+    span {
+        position:relative;
+        padding: 20px;
+        text-transform:uppercase;
+        color: var(--black);
+        font-weight:900;
+        letter-spacing:1px;
+        border: none;
+        font-size: 1.125rem;
+        outline:none;
+        cursor: pointer;
+    }
+
+    &::before {
+        content:" ";
+        display:block;
+        width:150px;
+        height: 60px;
+        background: #CBE5EC50;
+        position:absolute;
+        top:-5px;
+        left:-150px;
+        transform:rotate(45deg);
+        transition:all .15s ease-in-out;  
+        z-index:1;
+    }
+
+    &:hover:before {
+        margin-left:160%;
+    }
+}
+/*                  */
+/* END MODAL STYLES */
+/*                  */
+
+
 /*                      */
 /* SCREEN SIZE RESPONSE */
 /*                      */
@@ -304,6 +415,11 @@ form {
         flex-direction: column;
         justify-content: center;
         text-align: center;
+    }
+}
+@media (max-width: 499px) {
+    .form_wrapper {
+        left: 0px;
     }
 }
 /*                          */
