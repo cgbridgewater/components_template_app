@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { FaUser, FaLock, FaEnvelope } from "react-icons/fa";
+import { FaLock, FaEnvelope } from "react-icons/fa";
 // import { useNavigate } from 'react-router-dom';
 
 const LoginRegister = () => {
@@ -17,12 +17,34 @@ const LoginRegister = () => {
     };
     const toggleModal2 = () => {
         setIsOpen2(!isOpen2);
+        if (isOpen2) { // If the modal is being closed
+            // Clear the reset form state when modal is closed
+            setResetForm({
+                email: "",
+                verifyEmail: "",
+            });
+            setLoginForm({
+                email: "",
+                password: ""
+            });
+            setRemember(false);
+        }
     };
     // function to close modals
     const closeOnOutsideClick = (e) => {
         if (e.target.classList.contains('modal_overlay')) {
-        setIsOpen(false);
-        setIsOpen2(false);
+            setIsOpen(false);
+            setIsOpen2(false);
+            // Clear the reset form state when modal is closed
+            setResetForm({
+                email: "",
+                verifyEmail: "",
+            });
+            setLoginForm({
+                email: "",
+                password: ""
+            });
+            setRemember(false);
         }
     };
     //                                   //
@@ -63,6 +85,19 @@ const LoginRegister = () => {
     // END LOGIN STATE AND HANDLING //
     //                              //
 
+    //                                   //
+    // PASSWORD RESET STATE AND HANDLING //
+    //                                   //
+    const [resetForm, setResetForm] = useState({
+        email: "",
+        verifyEmail: "",
+    });
+    const handleReset = (e) => {
+        setResetForm({ ...resetForm, [e.target.name]: e.target.value });
+    }
+    //                                       //
+    // END PASSWORD RESET STATE AND HANDLING //
+    //                                       //
 
     //                     //
     // FORM TOGGLE CONTROL //
@@ -113,9 +148,9 @@ const LoginRegister = () => {
     // FRONT END EMAIL VALIDATION //
     const isValidRegisterEmail = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/.test(registrationForm.email);
     const isValidSigninEmail = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/.test(loginForm.email);
+    const isValidResetEmail = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/.test(resetForm.email);
     // END FRONT END EMAIL VALIDATION //
 
-    
 
     return (
         <main>
@@ -157,7 +192,6 @@ const LoginRegister = () => {
                                 <label htmlFor="remember_me">
                                     <input id="remember_me" type="checkbox" onChange={handleRememberChange} checked={remember} />Remember Me
                                 </label>
-                                {/* <a  href="#"><span className="form_link">Forgot Password</span></a> */}
                                 <span className="form_link" onClick={toggleModal2}>Forgot Password?</span>
                             </div>
                             {/* SUBMIT BUTTON */}
@@ -171,6 +205,7 @@ const LoginRegister = () => {
                         </form>
                     </div>
                     {/* END LOGIN FORM */}
+
                     {/* REGISTER FORM */}
                     <div className="form_box register">
                         <form action="">
@@ -216,7 +251,6 @@ const LoginRegister = () => {
                             <div className="remember_forgot">
                                 <label htmlFor="i_agree">
                                     <input id="i_agree" type="checkbox" onChange={handleAgreeChange} checked={agree}/>I agree to the&nbsp;
-                                    {/* <span className="form_link">Terms & Conditions</span> */}
                                 </label>
                                 <span className="form_link" onClick={toggleModal}>Terms & Conditions</span>
                             </div>
@@ -234,7 +268,9 @@ const LoginRegister = () => {
                 </div>
             </div>
             {/* END FORM CONTENT */}
-            {/* T&C's MODAL CONTENT */}
+
+
+            {/* PASSWORD RESET FORM */}
             <div className="modal_container">
                 {isOpen2 && (
                 <div className="modal_overlay" onClick={closeOnOutsideClick}>
@@ -242,24 +278,49 @@ const LoginRegister = () => {
                         {/* MODAL HEADER */}
                         <h3>Password Reset</h3>
                         {/* END MODAL HEADER */}
-                        {/* MODAL TEXT */}
-                        <p>
-                            So you forgot your password, huh...?
-                        </p>
-                        <p>
-                            You should've written it down somewhere safe.
-                        </p>
-                        
-                        {/* END MODAL TEXT */}
+                        {/* MODAL RESET FORM */}
+                        <form className='reset' action="">
+                            <p>
+                                Please enter your email address associated with your account. We will send you a link to reset your password.
+                            </p>
+                            <div className="input_box"> 
+                                <input 
+                                    onChange={handleReset}
+                                    type="email" 
+                                    name="email"
+                                    placeholder="Email" 
+                                    value={resetForm.email}
+                                    required 
+                                    />
+                                <FaEnvelope className="icon" />
+                            </div>
+                            <p>
+                                Please confirm your email address.
+                            </p>
+                            <div className="input_box"> 
+                                <input 
+                                    onChange={handleReset}
+                                    type="email" 
+                                    name="verifyEmail"
+                                    placeholder="Verify Email" 
+                                    value={resetForm.verifyEmail}
+                                    required 
+                                />
+                                <FaEnvelope className="icon" />
+                            </div>
+                            <button className="close_button" type="submit" disabled={!isValidResetEmail  || resetForm.verifyEmail !== resetForm.email}><span>Reset My Password</span></button>
+                        </form>
+                        {/* END MODAL RESET FORM */}
                         {/* CLOSE MODAL BUTTON */}
-                        <button className="close_button" onClick={toggleModal2}><span>Close</span></button>
+                        <div className="register_link">
+                            <a href="#" onClick={toggleModal2}><span className="form_link">Close Window</span></a>
+                        </div>
                         {/* END CLOSE MODAL BUTTON */}
                     </div>
                 </div>
                 )}
             </div>
-            {/* T&C's END MODAL CONTENT */}
-
+            {/* END PASSWORD RESET FORM */}
 
 
             {/* T&C's MODAL CONTENT */}
