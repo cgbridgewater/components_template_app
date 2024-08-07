@@ -18,7 +18,7 @@
     transform: translateX(-50%); /* Move back by half its width */
     width: 97%;
     stroke: var(--black);
-    opacity: 1;
+    opacity: .5;
 }
 
 
@@ -28,7 +28,7 @@
     height: 75px;
     pointer-events: none;
     z-index: 1;
-    filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.8)); /* White halo effect */
+    filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.95)); /* White halo effect */
 }
 
 
