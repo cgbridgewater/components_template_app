@@ -7,7 +7,8 @@
 /* CSS PAGE IMPORTS */
 /*                  */
 /* @import url("./Components/NavBar_Component/NavBar.css"); */
-@import url("./Components/NavBar_2_Component/NavBar_2_Style.css");
+@import url("./Components/NavBar_HB_Right_Component/NavBar_HB_Right.css");
+/* @import url("./Components/NavBar_2_Component/NavBar_2_Style.css"); */
 @import url("./Components/Go_To_Top_Component/GoToTop_Style.css");
 @import url("./Components/Footer_Component/Footer_Style.css");
 @import url("./Components/Slideshow_Component/Slideshow_Style.css");
@@ -27,7 +28,7 @@
   /* Standardize font sizes */
   --font_size_default: 16px;
   --image_brightness: 100%; /* Image Brightness for light color theme */
-  --background: #EFEFEF;
+  --background: #F7F6F0;
   --white_text: hsl(193, 46%, 86%);
   --white_fulltime: #F5F5F5;
   --white: #FFF;

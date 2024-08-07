@@ -12,7 +12,7 @@ const FlyingBee = () => {
     const updateZigzag = () => {
         const width = window.innerWidth;
         const height = window.innerHeight;
-        const startY = height * 0.27; // Snake starts at 25% down from the top
+        const startY = height * 0.15; // Snake starts at 25% down from the top
         let startX = width * 0.9; // Start from 20% in from the right edge
 
         let pathData = `M ${startX},${startY}`; // Start path

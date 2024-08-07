@@ -1,0 +1,393 @@
+main {
+    flex: 1;
+    padding-top: 150px; 
+    transition: all 300ms ease;
+}
+
+/*                         */
+/*      NAVBAR STYLE       */
+/*                         */
+
+/* hide toggle input */
+#drawer_toggle {
+    position: absolute;
+    opacity: 0;
+}
+
+/* hamburger and page "curtain" when navbar drawer is open*/
+#drawer_toggle_label {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    cursor: pointer;
+    right: 8px;
+    height:75px;
+    width: 80px;
+    top: -10px;
+    display: block;
+    position: fixed;
+    background: none;
+    z-index: 99999;
+    transition: all 300ms ease;
+}
+
+#drawer_toggle_label:before {
+    content: '';
+    display: block;
+    position: absolute;
+    height: 5px;
+    width: 35px;
+    border-radius: 10px;
+    right: 24px;
+    top: 55px;
+    background: black;
+    box-shadow: 0 10px 0 black, 0 20px 0 black;
+}
+
+#drawer_toggle_label:hover::before {
+    /* background: black;
+    box-shadow: 0 10px 0 black, 0 20px 0 black; */
+    transition: all 100ms ease;
+    filter: drop-shadow(3px 3px 1px #F3DB18);
+}
+/* End hamburger style */
+
+/* Header contains BeeDev name and logo */
+header {
+    width: 100%;
+    padding-right: 120px;
+    /* height: 125px; */
+    position: fixed;
+    background-color: #F7F6F0;
+    /* padding: 24px; */
+    z-index: 99998;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 300ms ease;
+    border-bottom: 2.5px solid black;
+
+    a {
+        
+
+        img {
+            position: relative;
+            height: 7rem;
+            left: 12px;
+            /* border-radius: 5px; */
+            /* margin: 0 10px 0 10px; */
+            /* filter: brightness(var(--image_brightness)) */
+        }
+    }
+
+    button {
+        padding: 12px 24px;
+        background-color: #F3DB18;
+        color: black;
+        font-size: 1.3rem;
+        border-radius: 30px;
+    }
+}
+/* End Header */
+
+/* Navbar slide out drawer */
+#drawer {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
+    position: fixed;
+    top: 0;
+    right: -300px;
+    height: 100%;
+    width: 200px;
+    background: black;
+    overflow-x: hidden;
+    padding: 0 0 0 20px;
+    -webkit-overflow-scrolling: touch;
+    z-index: 99998;
+    transition: all 300ms ease;
+}
+
+/* Drawer when checked */
+#drawer_toggle:checked ~ #drawer_toggle_label {
+    height: calc(100% + 20px);
+    right: 200px;
+    width: calc(100% - 180px);
+    background: rgba(0,0,0,0.85);
+    /* box-shadow: 10px 10px 40px 10px black; */
+    border-radius: 0 0 0 20px;
+    z-index: 2000000001; /*required to cover the tawk.to icon*/
+}
+
+/* Hamburger when checked */
+#drawer_toggle:checked ~ #drawer_toggle_label:hover:before,#drawer_toggle:checked ~ #drawer_toggle_label::before {
+    /* background: black;
+    box-shadow: 0 10px 0 black, 0 20px 0 black;
+    filter: none; */
+    visibility: hidden;
+}
+
+/* Push page content with drawer slide out */
+#drawer_toggle:checked ~ main {
+    margin-right: 200px; 
+    transition: all 300ms ease;
+}
+
+/* Push header content with drawer slide out */
+#drawer_toggle:checked ~ header {
+    padding-right: 250px
+}
+
+/* Darken screen when drawer is checked */
+#drawer_toggle:checked ~ #drawer {
+    right: 0px;
+    box-shadow: 0px 0px 16px black;
+    z-index: 99999;
+}
+
+/* Drawer list for links */
+#drawer ul {
+    margin-top: 16px;
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    li {
+        padding: 16px 0;
+    }
+}
+
+/* Drawer specific for Darkmode toggle */
+#drawer ul li div {
+    display: block;
+    font-size: .9rem;
+    color: whitesmoke;
+    text-decoration: none;
+}
+
+/* SCREEN RESPONSE */
+@media all and (max-width:720px) {
+    main {
+        padding-top: 100px; 
+    }
+    header{
+        padding-right: 90px;
+        a {
+            font-size: 3rem;
+
+            img {
+                top: 4px;
+                height: 5rem;
+            }
+        }
+        button {
+            padding: 8px 12px;
+            background-color: #F3DB18;
+            color: black;
+            font-size: 1rem;
+            border-radius: 30px;
+        }
+    }
+    #drawer_toggle_label:before {
+        top: 44px;
+    } 
+}
+
+@media all and (max-width:560px) {
+    header {
+        padding-right: 82px;
+
+        a {
+            /* font-size: 2.25rem; */
+            img {
+                /* height: 40px; */
+                /* padding-right: 20px; */
+            }
+        }
+    }
+    #drawer_toggle_label:before {
+        /* top: 45px; */
+        height: 4.5px;
+    } 
+}
+
+@media all and (max-width:450px) {
+    main {
+        padding-top: 70px; 
+    }
+    header {
+        padding-right: 75px;
+        top: -5px;
+
+        a {
+            /* font-size: 1.75rem; */
+
+            img {
+                /* margin-right: 0px;
+                padding-right: 5px; */
+                /* top: -10px; */
+                height: 4rem;
+            }
+        }
+        button {
+            padding: 6px 8px;
+            background-color: #F3DB18;
+            color: black;
+            font-size: .9rem;
+            border-radius: 30px;
+        }
+    }
+    #drawer_toggle_label:before {
+        height: 3px;
+        width: 28px;
+        top: 32px;
+        right: 12px;
+    }
+    #drawer_toggle:checked ~ #drawer_toggle_label {
+        height: 100%;
+        width: 100%;
+    }
+    #drawer_toggle:checked ~ #drawer_toggle_label, #drawer_toggle:checked ~ header {
+        right: 200px;
+    }
+    #drawer_toggle:checked ~ #drawer {
+        width: 200px;
+        padding: 16px;
+    }
+}
+/* END SCREEN RESPONSE */
+
+/* Required For Accessability */
+.visually-hidden {
+    position: absolute !important;
+    clip: rect(1px, 1px, 1px, 1px);
+    padding: 0 !important;
+    border: 0 !important;
+    height: 1px !important;
+    width: 1px !important;
+    overflow: hidden !important;
+    white-space: nowrap !important;
+}
+
+/*                    */
+/* Nav Bar Link Style */
+/*                    */
+/* Including Link Underline Fade In On Hover */
+.nav_link {
+    position: relative;
+    font-size: 0.9rem;
+    color: whitesmoke;
+    text-decoration: none;
+    cursor: pointer;
+    text-wrap: nowrap;
+
+    &:hover {
+        color: #F3DB18;
+    }
+    &::before {
+        right: 0; 
+    }
+    &::after {
+        left: 0;
+    }
+}
+
+.nav_link:before, .nav_link:after {
+    content: '';
+    border-bottom: 1px solid  #F3DB18;
+    position: absolute;
+    bottom: 0;
+    width: 0;
+    -webkit-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+}
+
+.nav_link:hover:before, .nav_link:hover:after {
+    width: 50%;
+}
+/*                        */
+/* END Nav Bar Link Style */
+/*                        */
+
+
+/*                            */
+/*   DARK MODE TOGGLE STYLE   */
+/*                            */
+.dark_mode_label {
+    width: 65px;
+    height: 30px;
+    position: relative;
+    top: 4px;
+    display: block;
+    background: grey;
+    border: thin solid whitesmoke;
+    border-radius: 200px;
+    box-shadow: inset 0px 5px 15px rgba(0, 0, 0, 0.4),
+        inset 0px -5px 15px rgba(255, 255, 255, 0.4);
+    cursor: pointer;
+    transition: 0.3s;
+
+    i {
+        position: absolute;
+        width: 20px;
+        top: 7.25px;
+        z-index: 100;
+    }
+    #sun {
+        left: 7.5px;
+        color: whitesmoke;
+        transition: all 0.15s ease;
+    }
+    #moon {
+        left: 44px;
+        color: whitesmoke;
+        transition: all 0.15s ease;
+    }
+}
+
+.dark_mode_label:after {
+    content: "";
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    top: 2px;
+    left: 3px;
+    background: linear-gradient(180deg, #ffcc89, #d8860b);
+    border-radius: 180px;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+}
+
+.dark_mode_label:active:after {
+    width: 30px;
+}
+
+.dark_mode_input {
+    width: 0;
+    height: 0;
+    visibility: hidden;
+}
+
+.dark_mode_input:checked + .dark_mode_label:after {
+    left: 62px;
+    transform: translateX(-100%);
+    background: linear-gradient(180deg, #777, #3a3a3a);
+}
+
+.dark_mode_input:not(:checked) + .dark_mode_label #moon:hover {
+    color: cyan;
+}
+
+.dark_mode_input:checked + .dark_mode_label #sun:hover {
+    color: goldenrod;
+}
+/*                         */
+/*   END DARK MODE STYLE   */
+/*                         */
+

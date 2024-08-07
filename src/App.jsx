@@ -13,7 +13,8 @@ import ErrorPage from './Views/ErrorPageView/ErrorPage'
 import GoToTopButton from './Components/Go_To_Top_Component/GoToTop'
 import Footer from './Components/Footer_Component/Footer'
 // import NavBar from './Components/NavBar_Component/NavBar'
-import NavBar2 from './Components/NavBar_2_Component/NabBar_2'
+import NavBar_HB_Right from './Components/NavBar_HB_Right_Component/NavBar_HB_Right'
+// import NavBar2 from './Components/NavBar_2_Component/NabBar_2'
 import FlyingBee from './Components/FlyingBee_Component/FlyingBee'
 // END HEADER, FOOTER, GO TO TOP BUTTON //
 
@@ -26,8 +27,9 @@ function App() {
       {/* App Type 1 */}
       <BrowserRouter>
         {/* PICK A NAV BAR - ADD/REMOVE CSS IMPORT FROM APP.JSX */}
+        <NavBar_HB_Right />
         {/* <NavBar /> */}
-        <NavBar2 />
+        {/* <NavBar2 /> */}
         <Routes>
           <Route exact path="/" element={<Index />} />
           <Route path="/centered" element={<CenteredPage />} />
