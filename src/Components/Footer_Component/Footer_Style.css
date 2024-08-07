@@ -154,11 +154,11 @@ footer {
 
 @media screen and (max-width: 500px) {
     .footer_badges {
-        left: 67px;
+        left: 77px;
         top: 10px;
     }
     .footer_links {
-        padding-left: 20px;
+        padding-left: 16px;
     }
     .footer_images {
         margin-right: 8px;
@@ -179,6 +179,11 @@ footer {
         p {
             font-size: 0.87rem;
         }
+    }
+    .footer_break {
+        background-color: black;
+        height: 1px;
+        padding: 0 16px;
     }
 }
 
