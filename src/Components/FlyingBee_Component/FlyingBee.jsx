@@ -6,8 +6,8 @@ const FlyingBee = () => {
     const [beePosition, setBeePosition] = useState({ x: 0, y: 0 });
 
     const curveRadius = 0.05 * window.innerWidth; // Adjusted for softer edges
-    const dashLength = 25; 
-    const gapLength = 25; 
+    const dashLength = 25; // line length
+    const gapLength = 25; // gap between lines
 
     const updateZigzag = () => {
         const width = window.innerWidth;
@@ -18,7 +18,7 @@ const FlyingBee = () => {
         let pathData = `M ${startX},${startY}`; // Start path
 
         // Update bee position
-        setBeePosition({ x: startX, y: startY });
+        setBeePosition({ x: startX, y: startY }); // keep the bee over the start position of the zigzag
 
         const zigzagCount = 4; // Number of zig-zags
         const segmentHeight = (height - startY) / zigzagCount; // Calculate height of each segment
