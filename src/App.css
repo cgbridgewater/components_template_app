@@ -15,6 +15,7 @@
 @import url("./Components/Button_Component/button.css");
 @import url("./Components/Movement_OnScroll/Movement_OnScroll_Style.css");
 @import url("./Components/LoginRegister_Component/LoginRegister_Style.css");
+@import url("./Components/FlyingBee_Component/FlyingBee.css");
 @import url("./Views/ErrorPageView/ErrorPageStyle.css");
 /*                       */
 /*     MAIN APP CSS      */
@@ -208,6 +209,7 @@ a {
   justify-content: center;
   flex-direction: column;
   align-items: center;
+  z-index: 10;
 }
 
 /* ONE LARGE CENTERED CONTAINER */
