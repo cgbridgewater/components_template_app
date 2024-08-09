@@ -17,7 +17,7 @@
     height:80px;
     padding: 16px;
     position:relative;
-    background-color: var(--button_bg);
+    background-color: #F3DB18;
     text-transform:uppercase;
     color: var(--black);
     font-weight:900;
@@ -33,7 +33,7 @@
     display:block;
     width:200px;
     height: 95px;
-    background: #CBE5EC50;
+    background: #F7F6F050;
     position:absolute;
     top:-5px;
     left:-200px;

@@ -1,6 +1,6 @@
 main {
     flex: 1;
-    padding-top: 150px; 
+    margin-top: 75px;
     transition: all 300ms ease;
 }
 
@@ -23,10 +23,10 @@ main {
     -ms-user-select: none;
     user-select: none;
     cursor: pointer;
-    right: 8px;
+    right: 0px;
     height:75px;
     width: 80px;
-    top: -10px;
+    top: -31px;
     display: block;
     position: fixed;
     background: none;
@@ -48,21 +48,18 @@ main {
 }
 
 #drawer_toggle_label:hover::before {
-    /* background: black;
-    box-shadow: 0 10px 0 black, 0 20px 0 black; */
     transition: all 100ms ease;
-    filter: drop-shadow(3px 3px 1px #F3DB18);
+    /* filter: drop-shadow(3px 3px 1px #F3DB18); */
 }
 /* End hamburger style */
 
 /* Header contains BeeDev name and logo */
 header {
     width: 100%;
-    padding-right: 120px;
-    /* height: 125px; */
+    padding-right: 80px;
+    height: 75px;
     position: fixed;
     background-color: #F7F6F0;
-    /* padding: 24px; */
     z-index: 99998;
     display: flex;
     justify-content: space-between;
@@ -70,26 +67,50 @@ header {
     transition: all 300ms ease;
     border-bottom: 2.5px solid black;
 
-    a {
-        
-
-        img {
-            position: relative;
-            height: 7rem;
-            left: 12px;
-            /* border-radius: 5px; */
-            /* margin: 0 10px 0 10px; */
-            /* filter: brightness(var(--image_brightness)) */
-        }
+    img {
+        margin-left: 16px;
+        height: 75px;
     }
 
     button {
-        padding: 12px 24px;
+        position:relative;
+        padding: 10px 14px;
         background-color: #F3DB18;
         color: black;
-        font-size: 1.3rem;
+        font-size: .85rem;
         border-radius: 30px;
+        text-transform:uppercase;
+        font-weight: 700;
+        border: none;
+        outline:none;
+        cursor: pointer;
+        overflow:hidden;
+
+        &::before {
+            content:" ";
+            display:block;
+            width:200px;
+            height: 95px;
+            background: #F7F6F050;
+            position:absolute;
+            top:-5px;
+            left:-200px;
+            transform:rotate(45deg);
+            transition:all .2s ease-in-out;  
+            z-index:1;
+        }
+    
+        &:hover:before {
+            margin-left:300%;
+        }
+    
+        /* &:hover {
+            border: 1px solid var(--white);
+            box-shadow: 8px 8px 10px var(--shadow);
+        } */
     }
+
+
 }
 /* End Header */
 
@@ -118,16 +139,12 @@ header {
     right: 200px;
     width: calc(100% - 180px);
     background: rgba(0,0,0,0.85);
-    /* box-shadow: 10px 10px 40px 10px black; */
     border-radius: 0 0 0 20px;
-    z-index: 2000000001; /*required to cover the tawk.to icon*/
+    z-index: 2000000001; 
 }
 
 /* Hamburger when checked */
 #drawer_toggle:checked ~ #drawer_toggle_label:hover:before,#drawer_toggle:checked ~ #drawer_toggle_label::before {
-    /* background: black;
-    box-shadow: 0 10px 0 black, 0 20px 0 black;
-    filter: none; */
     visibility: hidden;
 }
 
@@ -138,9 +155,9 @@ header {
 }
 
 /* Push header content with drawer slide out */
-#drawer_toggle:checked ~ header {
+/* #drawer_toggle:checked ~ header {
     padding-right: 250px
-}
+} */
 
 /* Darken screen when drawer is checked */
 #drawer_toggle:checked ~ #drawer {
@@ -171,97 +188,6 @@ header {
     text-decoration: none;
 }
 
-/* SCREEN RESPONSE */
-@media all and (max-width:720px) {
-    main {
-        padding-top: 100px; 
-    }
-    header{
-        padding-right: 90px;
-        a {
-            font-size: 3rem;
-
-            img {
-                top: 4px;
-                height: 5rem;
-            }
-        }
-        button {
-            padding: 8px 12px;
-            background-color: #F3DB18;
-            color: black;
-            font-size: 1rem;
-            border-radius: 30px;
-        }
-    }
-    #drawer_toggle_label:before {
-        top: 44px;
-    } 
-}
-
-@media all and (max-width:560px) {
-    header {
-        padding-right: 82px;
-
-        a {
-            /* font-size: 2.25rem; */
-            img {
-                /* height: 40px; */
-                /* padding-right: 20px; */
-            }
-        }
-    }
-    #drawer_toggle_label:before {
-        /* top: 45px; */
-        height: 4.5px;
-    } 
-}
-
-@media all and (max-width:450px) {
-    main {
-        padding-top: 70px; 
-    }
-    header {
-        padding-right: 75px;
-        top: -5px;
-
-        a {
-            /* font-size: 1.75rem; */
-
-            img {
-                /* margin-right: 0px;
-                padding-right: 5px; */
-                /* top: -10px; */
-                height: 4rem;
-            }
-        }
-        button {
-            padding: 6px 8px;
-            background-color: #F3DB18;
-            color: black;
-            font-size: .9rem;
-            border-radius: 30px;
-        }
-    }
-    #drawer_toggle_label:before {
-        height: 3px;
-        width: 28px;
-        top: 32px;
-        right: 12px;
-    }
-    #drawer_toggle:checked ~ #drawer_toggle_label {
-        height: 100%;
-        width: 100%;
-    }
-    #drawer_toggle:checked ~ #drawer_toggle_label, #drawer_toggle:checked ~ header {
-        right: 200px;
-    }
-    #drawer_toggle:checked ~ #drawer {
-        width: 200px;
-        padding: 16px;
-    }
-}
-/* END SCREEN RESPONSE */
 
 /* Required For Accessability */
 .visually-hidden {
@@ -278,7 +204,7 @@ header {
 /*                    */
 /* Nav Bar Link Style */
 /*                    */
-/* Including Link Underline Fade In On Hover */
+/* Including Link UnderlineOn Hover */
 .nav_link {
     position: relative;
     font-size: 0.9rem;
@@ -391,3 +317,98 @@ header {
 /*   END DARK MODE STYLE   */
 /*                         */
 
+
+
+
+/* SCREEN RESPONSE */
+
+@media all and (min-width:500px) {
+    main {
+        margin-top: 0px;
+    }
+}
+
+/* @media all and (max-width:720px) {
+    main {
+        padding-top: 100px; 
+    }
+    header{
+        padding-right: 90px;
+        a {
+            font-size: 3rem;
+
+            img {
+                top: 4px;
+                height: 5rem;
+            }
+        }
+        button {
+            padding: 8px 12px;
+            background-color: #F3DB18;
+            color: black;
+            font-size: 1rem;
+            border-radius: 30px;
+        }
+    }
+    #drawer_toggle_label:before {
+        top: 44px;
+    } 
+} */
+
+/* @media all and (max-width:560px) {
+    header {
+        padding-right: 82px;
+
+        a {
+            img {
+            }
+        }
+    }
+    #drawer_toggle_label:before {
+        height: 4.5px;
+    } 
+} */
+
+/* @media all and (max-width:450px) {
+    main {
+        padding-top: 70px; 
+    }
+    header {
+        padding-right: 75px;
+        top: -5px;
+
+        a {
+
+
+            img {
+
+                height: 4rem;
+            }
+        }
+        button {
+            padding: 6px 8px;
+            background-color: #F3DB18;
+            color: black;
+            font-size: .9rem;
+            border-radius: 30px;
+        }
+    }
+    #drawer_toggle_label:before {
+        height: 3px;
+        width: 28px;
+        top: 32px;
+        right: 12px;
+    }
+    #drawer_toggle:checked ~ #drawer_toggle_label {
+        height: 100%;
+        width: 100%;
+    }
+    #drawer_toggle:checked ~ #drawer_toggle_label, #drawer_toggle:checked ~ header {
+        right: 200px;
+    }
+    #drawer_toggle:checked ~ #drawer {
+        width: 200px;
+        padding: 16px;
+    }
+} */
+/* END SCREEN RESPONSE */
