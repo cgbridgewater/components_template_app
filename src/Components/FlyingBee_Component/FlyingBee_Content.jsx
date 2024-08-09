@@ -13,12 +13,11 @@ const FlyingBee_Content = () => {
 
 
             <div className="Body_Content">
-                <p>
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aut asperiores voluptates a explicabo rerum odio atque dolorem consequuntur sint earum sit, inventore fuga dolore laudantium doloremque omnis tempore vel beatae?
-                </p>
-                <p>
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aut asperiores voluptates a explicabo rerum odio atque dolorem consequuntur sint earum sit, inventore fuga dolore laudantium doloremque omnis tempore vel beatae?
-                </p>
+                <h1>Services</h1>
+                <p>Develope</p>
+                <p>Maintain</p>
+                <p>Update</p>
+                <p>Repair</p>
             </div>
         </div>
     );

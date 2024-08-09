@@ -31,6 +31,7 @@
 
     button {
         position:relative;
+        margin: 24px 0;
         padding: 16px 24px;
         background-color: #F3DB18;
         color: black;
@@ -64,6 +65,10 @@
 }
 
 .Body_Content {
+    margin: 36px;
+    h1 {
+        text-align: center;
+    }
     p {
         width: 80%;
         max-width: 300px;

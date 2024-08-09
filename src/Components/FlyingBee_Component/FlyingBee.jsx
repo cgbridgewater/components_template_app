@@ -15,14 +15,14 @@ const FlyingBee = () => {
         const height = window.innerHeight;
 
         // Set startY based on the height of the window
-        const startY = width >= 500 ? 175 : 110; // Conditional logic for startY
+        const startY = width >= 500 ? 200 : 150; // Conditional logic for startY
 
         let startX = width * 0.9; // Start from 10% in from the right edge
 
         let pathData = `M ${startX},${startY}`; // Start path
 
         // Update bee position
-        setBeePosition({ x: startX, y: startY }); // Keep the bee over the start position of the zigzag
+        setBeePosition({ x: startX, y: startY - 40 }); // Keep the bee over the start position of the zigzag
 
         const zigzagCount = 3; // Number of zig-zags
         const segmentHeight = (height - startY) / zigzagCount; // Calculate height of each segment
