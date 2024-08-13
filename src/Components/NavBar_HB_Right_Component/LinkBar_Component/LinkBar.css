@@ -1,54 +1,87 @@
-@media all and (min-width:500px) {
-
-    .LinkBar {
-        z-index: 10;
-        background-color: black;
-        padding: 8px;
-        margin-top: 75px;
-        
-        ul {
-            display: flex;
-            list-style: none;
-            padding: 0 0 0 8px;
-
-            li a {
-                position: relative;
-                margin: 0 16px;
-                font-size: 1.1rem;
-                color: #F3DB18;
-                text-decoration: none;
-                cursor: pointer;
-                text-wrap: nowrap;
-                
-                &:hover {
-                    color: whitesmoke;
-                }
-                &::before {
-                    right: 0; 
-                }
-                &::after {
-                    left: 0;
-                }
-            }
-        }
-    }
-
-    .LinkBar li a:before, .LinkBar li a:after {
-        content: '';
-        border-bottom: 1px solid  whitesmoke;
-        position: absolute;
-        bottom: 0;
-        width: 0;
-        -webkit-transition: all 0.2s ease;
-        transition: all 0.2s ease;
-    }
-
-    .LinkBar li a:hover:before, .LinkBar li a:hover:after {
-        width: 50%;
-    }
-
+.LinkBar {
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    z-index: 10;
+    background-color: black;
+    padding: 8px;
+    margin-top: 75px;
+    height: 40px;
+    width: 100%;
 }
 
+
+.Links_LinkBar ul {
+    display: flex;
+    list-style: none;
+    padding: 0 0 0 8px;
+    
+    li a {
+        position: relative;
+        margin: 0 16px;
+        font-size: 1.1rem;
+        color: #F3DB18;
+        text-decoration: none;
+        cursor: pointer;
+        text-wrap: nowrap;
+        
+        &:hover {
+            color: whitesmoke;
+        }
+        &::before {
+            right: 0; 
+        }
+        &::after {
+            left: 0;
+        }
+    }
+}
+
+.Links_LinkBar li a:before, .Links_LinkBar li a:after {
+    content: '';
+    border-bottom: 1px solid  whitesmoke;
+    position: absolute;
+    bottom: 0;
+    width: 0;
+    -webkit-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+}
+
+.Links_LinkBar li a:hover:before, .Links_LinkBar li a:hover:after {
+    width: 50%;
+}
+
+
+.Socials_LinkBar ul {
+    display: flex;
+    list-style: none;
+    padding: 0 8px 0 0;
+    
+    li a {
+        position: relative;
+        margin: 0 16px;
+        font-size: 1.5rem;
+        color: #F3DB18;
+        text-decoration: none;
+        cursor: pointer;
+        text-wrap: nowrap;
+        
+        &:hover {
+            color: whitesmoke;
+        }
+    }
+}
+
+
+/* Show for larger screens */
+@media all and (min-width:500px) {
+    .LinkBar {
+        display: show;
+    }
+}
+
+/* Hide for mobile */
 @media all and (max-width:499px) {
     .LinkBar {
         display: none;
