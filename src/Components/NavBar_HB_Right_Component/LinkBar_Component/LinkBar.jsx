@@ -17,9 +17,9 @@ const LinkBar = () => {
             </div>
             <div className="Socials_LinkBar">
                 <ul>
-                    <li><Link className="Socials_Link"><FaInstagramSquare /></Link></li>
-                    <li><Link className="Socials_Link"><FaLinkedin /></Link></li>
-                    <li><Link className="Socials_Link"><FaFacebookSquare /></Link></li>
+                    <li><a href="#add_a_link" target="_blank" className="Socials_Link"><FaInstagramSquare /></a></li>
+                    <li><a href="#add_a_link" target="_blank" className="Socials_Link"><FaLinkedin /></a></li>
+                    <li><a href="#add_a_link" target="_blank" className="Socials_Link"><FaFacebookSquare /></a></li>
                 </ul>
             </div>
         </div>

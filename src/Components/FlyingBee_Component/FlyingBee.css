@@ -1,7 +1,7 @@
 .FlyingBee_Content{
     z-index: 10;
     width: 90%;
-    margin: 4% auto 0;
+    margin: 15px auto 0;
 }
 
 .Title_Content {
@@ -99,6 +99,11 @@
 
 
 @media all and (min-width:499px) {
+
+    .FlyingBee_Content{
+        margin: 140px auto 0;
+    }
+    
     .Title_Content {
 
         width: 95%;

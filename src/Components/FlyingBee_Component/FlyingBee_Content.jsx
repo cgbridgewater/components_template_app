@@ -14,7 +14,7 @@ const FlyingBee_Content = () => {
 
             <div className="Body_Content">
                 <h1>Services</h1>
-                <p>Develope</p>
+                <p>Develop</p>
                 <p>Maintain</p>
                 <p>Update</p>
                 <p>Repair</p>

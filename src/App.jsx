@@ -16,6 +16,7 @@ import Footer from './Components/Footer_Component/Footer'
 import NavBar_HB_Right from './Components/NavBar_HB_Right_Component/NavBar_HB_Right'
 // import NavBar2 from './Components/NavBar_2_Component/NabBar_2'
 import FlyingBee from './Components/FlyingBee_Component/FlyingBee'
+import Footer2 from './Components/Footer2_Component/Footer2'
 // END HEADER, FOOTER, GO TO TOP BUTTON //
 
 
@@ -41,7 +42,7 @@ function App() {
         </Routes>
         {/* chatbox here */}
         <GoToTopButton />
-        <Footer />
+        <Footer2 />
       </BrowserRouter>
     </>
   )

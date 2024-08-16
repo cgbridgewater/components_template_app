@@ -4,7 +4,6 @@
 
 footer {
     position: relative;
-    margin-top: 40px;
     padding: 16px 85px 8px 8px;
     min-height: 95px;
     background: black;
@@ -53,15 +52,16 @@ footer {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    align-items: center;
+    align-items: flex-end;
 }
 
 .footer_socials {
     position: relative;
+    right: 8px;
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    gap: 0 10px;
+    gap: 0 16px;
 
     svg {
         transition: all 50ms ease;
@@ -126,77 +126,6 @@ footer {
     }
 }
 
-@media screen and (max-width: 870px) {
-    .footer_links {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-    .footer_badges {
-        position: relative;
-        gap: 16px 0;
-        margin-bottom: 18px;
-        left: 50px;
-    }
-    .footer_images {
-        margin-right: 8px;
-    }
-    .footer_socials {
-        margin-right: 8px;
-    }
-    .bee_dev {
-        margin-bottom: 4px;
-
-        p, a {
-            margin: 0;
-        }
-    }
-}
-
-@media screen and (max-width: 500px) {
-    .footer_badges {
-        left: 77px;
-        top: 10px;
-    }
-    .footer_links {
-        padding-left: 16px;
-    }
-    .footer_images {
-        margin-right: 8px;
-        gap: 0 32px;
-    }
-    .footer_socials {
-        margin-right: 8px;
-        gap: 0 3px;
-    }
-    .footer_image_one {
-        height: 55px;
-    }
-    .footer_image_two {
-        height: 45px;
-    }
-    .footer_rights {
-    padding: 8px 16px;
-        p {
-            font-size: 0.87rem;
-        }
-    }
-    .footer_break {
-        background-color: black;
-        height: 1px;
-        padding: 0 16px;
-    }
-}
-
-@media screen and (max-width: 370px) {
-    .footer_images {
-        margin-right: 4px;
-        gap: 0 24px;
-    }
-    .footer_socials {
-        margin-right: 4px;
-        gap: 0 2px;
-    }
-}
 
 /*                    */
 /*  Footer Link Style */
@@ -237,3 +166,77 @@ footer {
 /*                        */
 /* END Footer  Link Style */
 /*                        */
+
+
+
+@media screen and (max-width: 870px) {
+    .footer_links {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .footer_badges {
+        position: relative;
+        gap: 16px 0;
+        margin-bottom: 18px;
+        left: 50px;
+    }
+    .footer_images {
+        margin-right: 8px;
+    }
+    .footer_socials {
+        margin-right: 8px;
+    }
+    .bee_dev {
+        margin-bottom: 4px;
+
+        p, a {
+            margin: 0;
+        }
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .footer_badges {
+        left: 77px;
+        top: 10px;
+    }
+    .footer_links {
+        padding-left: 16px;
+    }
+    .footer_images {
+        margin-right: 8px;
+        gap: 0 32px;
+    }
+    .footer_socials {
+        /* margin-right: 8px; */
+        /* gap: 0 12px; */
+    }
+    .footer_image_one {
+        height: 55px;
+    }
+    .footer_image_two {
+        height: 45px;
+    }
+    .footer_rights {
+    padding: 8px 16px;
+        p {
+            font-size: 0.87rem;
+        }
+    }
+    .footer_break {
+        background-color: black;
+        height: 1px;
+        padding: 0 16px;
+    }
+}
+
+@media screen and (max-width: 370px) {
+    .footer_images {
+        margin-right: 4px;
+        gap: 0 24px;
+    }
+    .footer_socials {
+        margin-right: 4px;
+        gap: 0 2px;
+    }
+}
