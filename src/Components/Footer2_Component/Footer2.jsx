@@ -3,6 +3,7 @@ import { FaInstagramSquare, FaFacebookSquare, FaLinkedin } from "react-icons/fa"
 import FooterLink from "./FooterLink";
 import BeeDevLogo from "./Logo_1_No_BG.png"
 import Accordion from "./Accordion";
+import WanderingBee from "./WanderingBee.jsx";
 
 const Footer2 = () => {
     return (
@@ -29,6 +30,7 @@ const Footer2 = () => {
                 </div>
             </div>
         </footer>
+        <WanderingBee />
         <div className="footer_break">
             <hr />
         </div>

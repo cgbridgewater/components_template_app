@@ -1,0 +1,43 @@
+.wandering-bee {
+    position: relative;
+    height: 36px;
+    width: 100dvw;
+    padding: 8px 16px;
+    background-color: black;
+
+    img {
+        position:absolute;
+        left: 0;
+        transition: left 0.1s ease;
+        height: 20px; 
+        user-select: none;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        background-color: transparent;
+    }
+}
+
+
+.jumping {
+    transform: translate(0,-10px) rotate(-15deg);
+    -webkit-transform: translate(0,-10px) rotate(-15deg); /** Chrome & Safari **/
+    -o-transform: translate(0,-10px) rotate(-15deg); /** Opera **/
+    -moz-transform: translate(0,-10px) rotate(-15deg); /** Firefox **/
+}
+
+.flipped {
+    -moz-transform: scaleX(-1);
+    -o-transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+    filter: FlipH;
+    -ms-filter: "FlipH";
+}
+
+.flipped.jumping {
+    transform: scaleX(-1) translate(0, -10px) rotate(-15deg);
+    -webkit-transform: scaleX(-1) translate(0, -10px) rotate(-15deg);
+    -o-transform: scaleX(-1) translate(0, -10px) rotate(-15deg);
+    -moz-transform: scaleX(-1) translate(0, -10px) rotate(-15deg);
+}
