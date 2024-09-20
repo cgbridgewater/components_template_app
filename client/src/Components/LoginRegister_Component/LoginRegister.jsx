@@ -148,7 +148,7 @@ const LoginRegister = () => {
     // FRONT END EMAIL VALIDATION //
     const isValidRegisterEmail = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/.test(registrationForm.email);
     const isValidSigninEmail = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/.test(loginForm.email);
-    const isValidResetEmail = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/.test(resetForm.email);
+    const isValidResetEmail = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/.test(email);
     // END FRONT END EMAIL VALIDATION //
 
 
